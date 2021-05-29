@@ -5,15 +5,15 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 May 2021 14:43:59 +0530</pubDate>
-    <lastBuildDate>Sat, 29 May 2021 14:43:59 +0530</lastBuildDate>
+    <pubDate>Sat, 29 May 2021 14:49:10 +0530</pubDate>
+    <lastBuildDate>Sat, 29 May 2021 14:49:10 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>On Ctrl-C Ctrl-V</title>
         <description>&lt;p&gt;Javascript is extremely powerful, to say the least. One of its often overlooked features is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;copy&lt;/code&gt; event listener.&lt;/p&gt;
 
-&lt;p&gt;What damage can that do? Here, copy this ‘innocent’ command and paste it somewhere.&lt;/p&gt;
+&lt;p&gt;What damage can that do? Here, copy this ‘innocent’ command (meant to be pasted into a shell) and paste it somewhere.&lt;/p&gt;
 
 &lt;p id=&quot;fakecopy&quot;&gt;&lt;code&gt;$ echo &quot;innocent text&quot;&lt;/code&gt;&lt;/p&gt;
 
@@ -25,7 +25,7 @@
 });
 &lt;/script&gt;
 
-&lt;p&gt;The text you just copied even has an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt; character, so the command will execute automatically and I will have control over this system before you can even comprehend what just went down.&lt;/p&gt;
+&lt;p&gt;The text you just copied even has an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt; character, so the command will execute automatically if pasted in a shell, and I will have control over this system before you can even comprehend what just went down.&lt;/p&gt;
 
 &lt;p&gt;This is how the code works,&lt;/p&gt;
 

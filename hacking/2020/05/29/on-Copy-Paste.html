@@ -60,7 +60,7 @@
         <section class="post-content">
             <p>Javascript is extremely powerful, to say the least. One of its often overlooked features is the <code class="language-plaintext highlighter-rouge">copy</code> event listener.</p>
 
-<p>What damage can that do? Here, copy this ‘innocent’ command and paste it somewhere.</p>
+<p>What damage can that do? Here, copy this ‘innocent’ command (meant to be pasted into a shell) and paste it somewhere.</p>
 
 <p id="fakecopy"><code>$ echo "innocent text"</code></p>
 
@@ -72,7 +72,7 @@
 });
 </script>
 
-<p>The text you just copied even has an <code class="language-plaintext highlighter-rouge">Enter</code> character, so the command will execute automatically and I will have control over this system before you can even comprehend what just went down.</p>
+<p>The text you just copied even has an <code class="language-plaintext highlighter-rouge">Enter</code> character, so the command will execute automatically if pasted in a shell, and I will have control over this system before you can even comprehend what just went down.</p>
 
 <p>This is how the code works,</p>
 
