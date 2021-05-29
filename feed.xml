@@ -5,15 +5,15 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 May 2021 14:35:53 +0530</pubDate>
-    <lastBuildDate>Sat, 29 May 2021 14:35:53 +0530</lastBuildDate>
+    <pubDate>Sat, 29 May 2021 14:43:59 +0530</pubDate>
+    <lastBuildDate>Sat, 29 May 2021 14:43:59 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>On Ctrl-C Ctrl-V</title>
         <description>&lt;p&gt;Javascript is extremely powerful, to say the least. One of its often overlooked features is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;copy&lt;/code&gt; event listener.&lt;/p&gt;
 
-&lt;p&gt;What damage can that do? Here, copy this ‘innocent’ command and paste it somewhere else.&lt;/p&gt;
+&lt;p&gt;What damage can that do? Here, copy this ‘innocent’ command and paste it somewhere.&lt;/p&gt;
 
 &lt;p id=&quot;fakecopy&quot;&gt;&lt;code&gt;$ echo &quot;innocent text&quot;&lt;/code&gt;&lt;/p&gt;
 
@@ -25,7 +25,7 @@
 });
 &lt;/script&gt;
 
-&lt;p&gt;The text you just copied even has an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt; character so the command will execute automatically and I will have control over this system before you can comprehend what just went down.&lt;/p&gt;
+&lt;p&gt;The text you just copied even has an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt; character, so the command will execute automatically and I will have control over this system before you can even comprehend what just went down.&lt;/p&gt;
 
 &lt;p&gt;This is how the code works,&lt;/p&gt;
 
@@ -36,7 +36,7 @@
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Think you’ll be safe if you disable your javascript? Sorry to burst your bubble but this can also be done with raw &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CSS&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Think you’ll be safe if by disabling javascript? Sorry to burst your bubble but this can also be done with raw &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;css&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p id=&quot;fakecopy&quot;&gt; &lt;code&gt;$ echo &lt;span style=&quot;font-size: 0;&quot;&gt;; rm -rf / ; echo &lt;/span&gt;&quot;looks safe to me!&quot;&lt;/code&gt;&lt;/p&gt;
 
