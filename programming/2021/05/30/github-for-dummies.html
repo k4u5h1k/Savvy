@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Savvy - For everything technical and interesting</title>
+    <meta name="description" content="another blog" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/savvy/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/savvy/assets/css/main.css " />
+
+</head>
+<body class="home-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/savvy/">Home</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Github For Dummies</h1>
+            <section class="post-meta">
+                
+                    on Programming
+                
+                <time class="post-date" datetime="2021-05-30">30 May 2021</time>
+            </section>
+        </header>
+        <br>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="">
+                
+                    <span class="blog-title">Savvy</span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2021-05-30">30 May 2021</time>
+            
+                on Programming
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Github For Dummies</h1> -->
+
+        <section class="post-content">
+            <p>Git was created in 1995 by Linus Torvalds, the creator of Linux, when he was frustrated by existing version control systems. But what exactly is a <em>version control system</em>?</p>
+
+<p>Suppose you are working on a huge software project, and at some point, after making several changes you run the program and it just crashes. You had closed all your editors before so you can’t hit <code class="language-plaintext highlighter-rouge">Control-Z</code> and simply undo your changes. What do you do now?</p>
+
+<p>The correct answer is: <em>run it again and again until it works</em>. To avoid a situation like this, you should use git. With git you can <code class="language-plaintext highlighter-rouge">commit</code> your changes which means you can create a checkpoint  , which can be <code class="language-plaintext highlighter-rouge">reset</code> to later, if the need arises. Lets see how this is done.</p>
+
+<p>Open up your git-bash or any shell that has git installed. Now <code class="language-plaintext highlighter-rouge">cd</code> into the directory where you want to initialize your git repository and hit <code class="language-plaintext highlighter-rouge">git init</code>. If you see something like <code class="language-plaintext highlighter-rouge">Initialized empty Git repository in path</code>, this was successful. Now this git repository will track any changes you tell it to <strong>within</strong> this directory.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-14 at 12.37.46 PM.png" alt="Screenshot 2021-05-14 at 12.37.46 PM" /></p>
+
+<p>Now lets write a script that shows us the current time.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">now</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%H:%m'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Great now lets make a commit by first adding it to the stage using <code class="language-plaintext highlighter-rouge">git add</code> and then commit your stage using <code class="language-plaintext highlighter-rouge">git commit</code>.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-14 at 12.55.47 PM.png" alt="Screenshot 2021-05-14 at 12.55.47 PM" /></p>
+
+<p>Great. You’ve made your first commit.</p>
+
+<p><img src="/savvy/assets/images/Screenshot%202021-05-14%20at%2012.57.04%20PM.png" alt="Screenshot 2021-05-14 at 12.57.04 PM" /></p>
+
+<p>AHHHHHHHHH I deliberately deleted my script using rm. The shell has nothing like Recycle Bin, OH NO What do I do now?!</p>
+
+<p>Your commits are identified by their <em>hashes</em>. To grab this previous commit’s hash hit <code class="language-plaintext highlighter-rouge">git log</code>.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-14 at 12.59.44 PM.png" alt="Screenshot 2021-05-14 at 12.59.44 PM" /></p>
+
+<p>So my commit’s hash is  <code class="language-plaintext highlighter-rouge">cfe234cd49925d39a9d5a3895a7e3298e741f116</code>. Yours will differ.</p>
+
+<p>Now you can reset to this commit using</p>
+
+<p><code class="language-plaintext highlighter-rouge">git reset --hard cfe234cd49925d39a9d5a3895a7e3298e741f116</code></p>
+
+<p>Awesome we have our show_time back.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-14 at 1.11.13 PM.png" alt="Screenshot 2021-05-14 at 1.11.13 PM" /></p>
+
+<p>Now what if you made a commit you didn’t mean to make? How would you delete this commit without hard resetting to it? Simple. You <code class="language-plaintext highlighter-rouge">soft</code> reset.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-14 at 1.15.06 PM.png" alt="Screenshot 2021-05-14 at 1.15.06 PM" /></p>
+
+<p>So now run <code class="language-plaintext highlighter-rouge">git log</code> to grab the hash of the commit you want to soft reset to.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-14 at 1.15.36 PM.png" alt="Screenshot 2021-05-14 at 1.15.36 PM" /></p>
+
+<p>So once more we want to soft reset to <code class="language-plaintext highlighter-rouge">added show_time</code> commit. So simply run</p>
+
+<p><code class="language-plaintext highlighter-rouge">git reset --soft cfe234cd49925d39a9d5a3895a7e3298e741f116</code></p>
+
+<p>Running git log again can verify that we have deleted that commit.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-14 at 1.18.36 PM.png" alt="Screenshot 2021-05-14 at 1.18.36 PM" /></p>
+
+<p>Now lets move to Github!</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 11.48.58 AM.png" alt="Screenshot 2021-05-15 at 11.48.58 AM" /></p>
+
+<p>First off, if you don’t have dark mode on, quickly click the button on google meet that looks like a red sideways telephone.</p>
+
+<p>Otherwise we can proceed to <code class="language-plaintext highlighter-rouge">cloning</code> someone’s repo! First copy the repo url.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.21.54 PM.png" alt="Screenshot 2021-05-15 at 12.21.54 PM" /></p>
+
+<p>then hit <code class="language-plaintext highlighter-rouge">git clone https://github.com/k4u5h1k/Games.git</code> to clone the repo within the current directory.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.27.31 PM.png" alt="Screenshot 2021-05-15 at 12.27.31 PM" /></p>
+
+<p>Now lets each make a github repo of our own and clone them. To make a repo hit the plus on the top right and click on new repository.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.33.24 PM.png" alt="Screenshot 2021-05-15 at 12.33.24 PM" /></p>
+
+<p>Fill in the details and hit Create repository.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.37.49 PM.png" alt="Screenshot 2021-05-15 at 12.37.49 PM" /></p>
+
+<p>You have created your first repository.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.38.18 PM.png" alt="Screenshot 2021-05-15 at 12.38.18 PM" /></p>
+
+<p>Looks good. Lets clone this.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.40.15 PM.png" alt="Screenshot 2021-05-15 at 12.40.15 PM" /></p>
+
+<p>Now move your show_time script into our cloned directory.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.40.38 PM.png" alt="Screenshot 2021-05-15 at 12.40.38 PM" /></p>
+
+<p>Now make a commit.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.43.19 PM.png" alt="Screenshot 2021-05-15 at 12.43.19 PM" /></p>
+
+<p>And push it to github using <code class="language-plaintext highlighter-rouge">git push</code>.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.43.54 PM.png" alt="Screenshot 2021-05-15 at 12.43.54 PM" /></p>
+
+<p>Now you can refresh your github repo page and show_time.py should appear.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 12.47.13 PM.png" alt="Screenshot 2021-05-15 at 12.47.13 PM" /></p>
+
+<p>Now what if we want to work with someone else’s repository. To do this we have two options.</p>
+
+<ol>
+  <li>
+    <p>Simply clone their repo locally and use their code however you want.</p>
+
+    <p>But in this option you will not be able to push to github because you are not allowed to push to their repo.</p>
+  </li>
+  <li>
+    <p>Create a fork</p>
+
+    <p>forking a repo means creating a copy of the original repo in your account. This will allow you to make changes to the code and push it to your fork without affecting the original repository.</p>
+  </li>
+</ol>
+
+<p>To fork a repo you can click on the fork button on the top right</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 1.08.36 PM.png" alt="Screenshot 2021-05-15 at 1.08.36 PM" /></p>
+
+<p>Now create a fork of the DNT apis repo. Go to https://github.com/dreadnoughtrobotics/DNT-apis and hit fork.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 1.10.27 PM.png" alt="Screenshot 2021-05-15 at 1.10.27 PM" /></p>
+
+<p>This should create a fork of the original repo in your account. You can now clone this repo and make whatever changes you want.</p>
+
+<p>But what if you have made a change or wrote a new feature that you think will benefit our origin repo? You make a <strong>Pull Request</strong> (PR).</p>
+
+<p>Once you make your PR the maintainers will review it, or suggest changes if required. Finally they may merge your PR or close it without merging, if they found your addition inappropriate or inadequate.</p>
+
+<p>Now if someone makes a PR to your project and you accept their changes, how will you apply their changes to your local code? Will you clone the repo again? No. You use <code class="language-plaintext highlighter-rouge">git pull</code>.</p>
+
+<p>Lets make a change to our screen_time repo’s README and pull the change locally.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 5.18.10 PM.png" alt="Screenshot 2021-05-15 at 5.18.10 PM" /></p>
+
+<p>Click on the pen icon here and make changes to the README.</p>
+
+<p>Then go to your screen_time directory and type <code class="language-plaintext highlighter-rouge">git pull</code> to get those changes in your local README.</p>
+
+<p><img src="/savvy/assets/images/Screenshot 2021-05-15 at 5.45.46 PM.png" alt="Screenshot 2021-05-15 at 5.45.46 PM" /></p>
+
+<p>You are now equipped with the power of git!</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/savvy/" style="background-image: url(/savvy/assets/images/profile.png)">
+                    <span class="hidden">Kaushik's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> Kaushik </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        Just like writing.
+                    </p>
+                </section>
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Github For Dummies&amp;url=kaushik.me/programming/2021/05/30/github-for-dummies.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=kaushik.me/programming/2021/05/30/github-for-dummies.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=kaushik.me/programming/2021/05/30/github-for-dummies.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <script type="text/javascript" src="/savvy/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/savvy/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/savvy/assets/js/index.js"></script>
+
+</body>
+</html>

@@ -5,9 +5,219 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 29 May 2021 14:50:34 +0530</pubDate>
-    <lastBuildDate>Sat, 29 May 2021 14:50:34 +0530</lastBuildDate>
+    <pubDate>Tue, 01 Jun 2021 16:18:40 +0530</pubDate>
+    <lastBuildDate>Tue, 01 Jun 2021 16:18:40 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Tmux Shortcuts</title>
+        <description>&lt;p&gt;ctrl-B     ← prefix&lt;/p&gt;
+
+&lt;p&gt;prefix % ← split with vertical line&lt;/p&gt;
+
+&lt;p&gt;prefix “   ← split with horizontal line&lt;/p&gt;
+
+&lt;p&gt;prefix x  ← kill pane&lt;/p&gt;
+
+&lt;p&gt;prefix c ← new window&lt;/p&gt;
+
+&lt;p&gt;prefix p ← move to previous window&lt;/p&gt;
+
+&lt;p&gt;prefix n ← move to next window&lt;/p&gt;
+
+&lt;p&gt;prefix d ← detach&lt;/p&gt;
+
+&lt;p&gt;prefix z ← toggle pane full screen&lt;/p&gt;
+
+&lt;p&gt;prefix q ← show pane numbers; type number to go to pane&lt;/p&gt;
+
+&lt;p&gt;prefix , ← rename window&lt;/p&gt;
+
+&lt;p&gt;prefix $ ← rename session&lt;/p&gt;
+
+&lt;p&gt;prefix s ← list session&lt;/p&gt;
+
+&lt;p&gt;prefix ‘ # ← jump to # window&lt;/p&gt;
+
+&lt;p&gt;prefix ! ← send pane to new window&lt;/p&gt;
+
+&lt;p&gt;prefix &amp;amp; ← kill window&lt;/p&gt;
+
+&lt;p&gt;prefix t ← big clock&lt;/p&gt;
+
+&lt;p&gt;prefix o ← swap panes&lt;/p&gt;
+
+&lt;p&gt;prefix { ← move current pane left&lt;/p&gt;
+
+&lt;p&gt;prefix } ← move current pane right&lt;/p&gt;
+
+&lt;p&gt;:setw synchronize-panes on ← sync panes&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Jun 2021 00:00:00 +0530</pubDate>
+        <link>/savvy/terminal/2021/06/01/tmux-notes.html</link>
+        <guid isPermaLink="true">/savvy/terminal/2021/06/01/tmux-notes.html</guid>
+        
+        
+        <category>Terminal</category>
+        
+      </item>
+    
+      <item>
+        <title>Github For Dummies</title>
+        <description>&lt;p&gt;Git was created in 1995 by Linus Torvalds, the creator of Linux, when he was frustrated by existing version control systems. But what exactly is a &lt;em&gt;version control system&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;Suppose you are working on a huge software project, and at some point, after making several changes you run the program and it just crashes. You had closed all your editors before so you can’t hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Control-Z&lt;/code&gt; and simply undo your changes. What do you do now?&lt;/p&gt;
+
+&lt;p&gt;The correct answer is: &lt;em&gt;run it again and again until it works&lt;/em&gt;. To avoid a situation like this, you should use git. With git you can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;commit&lt;/code&gt; your changes which means you can create a checkpoint  , which can be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reset&lt;/code&gt; to later, if the need arises. Lets see how this is done.&lt;/p&gt;
+
+&lt;p&gt;Open up your git-bash or any shell that has git installed. Now &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into the directory where you want to initialize your git repository and hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt;. If you see something like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Initialized empty Git repository in path&lt;/code&gt;, this was successful. Now this git repository will track any changes you tell it to &lt;strong&gt;within&lt;/strong&gt; this directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-14 at 12.37.46 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 12.37.46 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now lets write a script that shows us the current time.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'%H:%m'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Great now lets make a commit by first adding it to the stage using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add&lt;/code&gt; and then commit your stage using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-14 at 12.55.47 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 12.55.47 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Great. You’ve made your first commit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot%202021-05-14%20at%2012.57.04%20PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 12.57.04 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;AHHHHHHHHH I deliberately deleted my script using rm. The shell has nothing like Recycle Bin, OH NO What do I do now?!&lt;/p&gt;
+
+&lt;p&gt;Your commits are identified by their &lt;em&gt;hashes&lt;/em&gt;. To grab this previous commit’s hash hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-14 at 12.59.44 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 12.59.44 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So my commit’s hash is  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;. Yours will differ.&lt;/p&gt;
+
+&lt;p&gt;Now you can reset to this commit using&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --hard cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Awesome we have our show_time back.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-14 at 1.11.13 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 1.11.13 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now what if you made a commit you didn’t mean to make? How would you delete this commit without hard resetting to it? Simple. You &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;soft&lt;/code&gt; reset.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-14 at 1.15.06 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 1.15.06 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So now run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt; to grab the hash of the commit you want to soft reset to.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-14 at 1.15.36 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 1.15.36 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So once more we want to soft reset to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;added show_time&lt;/code&gt; commit. So simply run&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --soft cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Running git log again can verify that we have deleted that commit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-14 at 1.18.36 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 1.18.36 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now lets move to Github!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 11.48.58 AM.png&quot; alt=&quot;Screenshot 2021-05-15 at 11.48.58 AM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;First off, if you don’t have dark mode on, quickly click the button on google meet that looks like a red sideways telephone.&lt;/p&gt;
+
+&lt;p&gt;Otherwise we can proceed to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cloning&lt;/code&gt; someone’s repo! First copy the repo url.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.21.54 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.21.54 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;then hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone https://github.com/k4u5h1k/Games.git&lt;/code&gt; to clone the repo within the current directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.27.31 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.27.31 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now lets each make a github repo of our own and clone them. To make a repo hit the plus on the top right and click on new repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.33.24 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.33.24 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fill in the details and hit Create repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.37.49 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.37.49 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You have created your first repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.38.18 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.38.18 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Looks good. Lets clone this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.40.15 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.40.15 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now move your show_time script into our cloned directory.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.40.38 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.40.38 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now make a commit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.43.19 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.43.19 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And push it to github using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.43.54 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.43.54 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you can refresh your github repo page and show_time.py should appear.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 12.47.13 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.47.13 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now what if we want to work with someone else’s repository. To do this we have two options.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Simply clone their repo locally and use their code however you want.&lt;/p&gt;
+
+    &lt;p&gt;But in this option you will not be able to push to github because you are not allowed to push to their repo.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a fork&lt;/p&gt;
+
+    &lt;p&gt;forking a repo means creating a copy of the original repo in your account. This will allow you to make changes to the code and push it to your fork without affecting the original repository.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To fork a repo you can click on the fork button on the top right&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 1.08.36 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 1.08.36 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now create a fork of the DNT apis repo. Go to https://github.com/dreadnoughtrobotics/DNT-apis and hit fork.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 1.10.27 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 1.10.27 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This should create a fork of the original repo in your account. You can now clone this repo and make whatever changes you want.&lt;/p&gt;
+
+&lt;p&gt;But what if you have made a change or wrote a new feature that you think will benefit our origin repo? You make a &lt;strong&gt;Pull Request&lt;/strong&gt; (PR).&lt;/p&gt;
+
+&lt;p&gt;Once you make your PR the maintainers will review it, or suggest changes if required. Finally they may merge your PR or close it without merging, if they found your addition inappropriate or inadequate.&lt;/p&gt;
+
+&lt;p&gt;Now if someone makes a PR to your project and you accept their changes, how will you apply their changes to your local code? Will you clone the repo again? No. You use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lets make a change to our screen_time repo’s README and pull the change locally.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 5.18.10 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 5.18.10 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click on the pen icon here and make changes to the README.&lt;/p&gt;
+
+&lt;p&gt;Then go to your screen_time directory and type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull&lt;/code&gt; to get those changes in your local README.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2021-05-15 at 5.45.46 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 5.45.46 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You are now equipped with the power of git!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 May 2021 17:06:13 +0530</pubDate>
+        <link>/savvy/programming/2021/05/30/github-for-dummies.html</link>
+        <guid isPermaLink="true">/savvy/programming/2021/05/30/github-for-dummies.html</guid>
+        
+        
+        <category>Programming</category>
+        
+      </item>
     
       <item>
         <title>On Ctrl-C Ctrl-V</title>
@@ -36,7 +246,7 @@
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Think you’ll be safe if by disabling javascript? Sorry to burst your bubble but this can also be done with raw &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;css&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Think you’ll be safe if by disabling Javascript? Sorry to burst your bubble but this can also be done with raw CSS.&lt;/p&gt;
 
 &lt;p id=&quot;fakecopy&quot;&gt; &lt;code&gt;$ echo &lt;span style=&quot;font-size: 0;&quot;&gt;; rm -rf / ; echo &lt;/span&gt;&quot;looks safe to me!&quot;&lt;/code&gt;&lt;/p&gt;
 
@@ -45,9 +255,9 @@
 &lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;font-size: 0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;'malicious command'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;looks safe to me!&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
-        <pubDate>Fri, 29 May 2020 17:00:00 +0530</pubDate>
-        <link>/savvy/hacking/2020/05/29/on-Copy-Paste.html</link>
-        <guid isPermaLink="true">/savvy/hacking/2020/05/29/on-Copy-Paste.html</guid>
+        <pubDate>Sat, 29 May 2021 17:00:00 +0530</pubDate>
+        <link>/savvy/hacking/2021/05/29/on-Copy-Paste.html</link>
+        <guid isPermaLink="true">/savvy/hacking/2021/05/29/on-Copy-Paste.html</guid>
         
         
         <category>Hacking</category>
