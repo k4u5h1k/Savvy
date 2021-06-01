@@ -5,9 +5,109 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Jun 2021 20:52:12 +0530</pubDate>
-    <lastBuildDate>Tue, 01 Jun 2021 20:52:12 +0530</lastBuildDate>
+    <pubDate>Wed, 02 Jun 2021 00:23:27 +0530</pubDate>
+    <lastBuildDate>Wed, 02 Jun 2021 00:23:27 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Tmux Shortcuts</title>
+        <description>&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmux&lt;/code&gt; is a session manager for your terminal.&lt;/p&gt;
+
+&lt;p&gt;ctrl-B     ← prefix&lt;/p&gt;
+
+&lt;p&gt;prefix % ← split with vertical line&lt;/p&gt;
+
+&lt;p&gt;prefix “   ← split with horizontal line&lt;/p&gt;
+
+&lt;p&gt;prefix x  ← kill pane&lt;/p&gt;
+
+&lt;p&gt;prefix c ← new window&lt;/p&gt;
+
+&lt;p&gt;prefix p ← move to previous window&lt;/p&gt;
+
+&lt;p&gt;prefix n ← move to next window&lt;/p&gt;
+
+&lt;p&gt;prefix d ← detach&lt;/p&gt;
+
+&lt;p&gt;prefix z ← toggle pane full screen&lt;/p&gt;
+
+&lt;p&gt;prefix q ← show pane numbers; type number to go to pane&lt;/p&gt;
+
+&lt;p&gt;prefix , ← rename window&lt;/p&gt;
+
+&lt;p&gt;prefix $ ← rename session&lt;/p&gt;
+
+&lt;p&gt;prefix s ← list session&lt;/p&gt;
+
+&lt;p&gt;prefix ‘ # ← jump to # window&lt;/p&gt;
+
+&lt;p&gt;prefix ! ← send pane to new window&lt;/p&gt;
+
+&lt;p&gt;prefix &amp;amp; ← kill window&lt;/p&gt;
+
+&lt;p&gt;prefix t ← big clock&lt;/p&gt;
+
+&lt;p&gt;prefix o ← swap panes&lt;/p&gt;
+
+&lt;p&gt;prefix { ← move current pane left&lt;/p&gt;
+
+&lt;p&gt;prefix } ← move current pane right&lt;/p&gt;
+
+&lt;p&gt;:setw synchronize-panes on ← sync panes&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Jun 2021 00:00:00 +0530</pubDate>
+        <link>/savvy/terminal/2021/06/02/tmux-notes.html</link>
+        <guid isPermaLink="true">/savvy/terminal/2021/06/02/tmux-notes.html</guid>
+        
+        
+        <category>Terminal</category>
+        
+      </item>
+    
+      <item>
+        <title>On Ctrl-C Ctrl-V</title>
+        <description>&lt;p&gt;Javascript is extremely powerful, to say the least. One of its often overlooked features is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;copy&lt;/code&gt; event listener.&lt;/p&gt;
+
+&lt;p&gt;What damage can that do? Here, copy this ‘innocent’ command (&lt;em&gt;meant to be pasted into a shell&lt;/em&gt;) and paste it somewhere.&lt;/p&gt;
+
+&lt;p id=&quot;fakecopy&quot;&gt;&lt;code&gt;$ echo &quot;innocent text&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;script&gt;
+ document.getElementById('fakecopy').addEventListener('copy', function(e) {
+    e.clipboardData.setData('text/plain',
+        'echo &quot;This could\'ve be something malicious!😈&quot;\n');
+    e.preventDefault();
+});
+&lt;/script&gt;
+
+&lt;p&gt;The text you just copied even has an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt; character, so the command will execute automatically if pasted in a shell, and &lt;strong&gt;I will have control over this system before you can even comprehend what just went down&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is how the code works,&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;fakecopy&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clipboardData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;text/plain&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;echo &quot;This could&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;ve be something malicious!😈&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Think you’ll be safe if by disabling Javascript? Sorry to burst your bubble but this can also be done with raw CSS.&lt;/p&gt;
+
+&lt;p id=&quot;fakecopy&quot;&gt; &lt;code&gt;$ echo &lt;span style=&quot;font-size: 0;&quot;&gt;; rm -rf / ; echo &lt;/span&gt;&quot;looks safe to me!&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This is how that works,&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;font-size: 0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;'malicious command'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;looks safe to me!&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 01 Jun 2021 17:00:00 +0530</pubDate>
+        <link>/savvy/hacking/2021/06/01/on-Copy-Paste.html</link>
+        <guid isPermaLink="true">/savvy/hacking/2021/06/01/on-Copy-Paste.html</guid>
+        
+        
+        <category>Hacking</category>
+        
+      </item>
     
       <item>
         <title>ROS for dummies</title>
@@ -421,59 +521,6 @@ Sending: issue number 4
       </item>
     
       <item>
-        <title>Tmux Shortcuts</title>
-        <description>&lt;p&gt;ctrl-B     ← prefix&lt;/p&gt;
-
-&lt;p&gt;prefix % ← split with vertical line&lt;/p&gt;
-
-&lt;p&gt;prefix “   ← split with horizontal line&lt;/p&gt;
-
-&lt;p&gt;prefix x  ← kill pane&lt;/p&gt;
-
-&lt;p&gt;prefix c ← new window&lt;/p&gt;
-
-&lt;p&gt;prefix p ← move to previous window&lt;/p&gt;
-
-&lt;p&gt;prefix n ← move to next window&lt;/p&gt;
-
-&lt;p&gt;prefix d ← detach&lt;/p&gt;
-
-&lt;p&gt;prefix z ← toggle pane full screen&lt;/p&gt;
-
-&lt;p&gt;prefix q ← show pane numbers; type number to go to pane&lt;/p&gt;
-
-&lt;p&gt;prefix , ← rename window&lt;/p&gt;
-
-&lt;p&gt;prefix $ ← rename session&lt;/p&gt;
-
-&lt;p&gt;prefix s ← list session&lt;/p&gt;
-
-&lt;p&gt;prefix ‘ # ← jump to # window&lt;/p&gt;
-
-&lt;p&gt;prefix ! ← send pane to new window&lt;/p&gt;
-
-&lt;p&gt;prefix &amp;amp; ← kill window&lt;/p&gt;
-
-&lt;p&gt;prefix t ← big clock&lt;/p&gt;
-
-&lt;p&gt;prefix o ← swap panes&lt;/p&gt;
-
-&lt;p&gt;prefix { ← move current pane left&lt;/p&gt;
-
-&lt;p&gt;prefix } ← move current pane right&lt;/p&gt;
-
-&lt;p&gt;:setw synchronize-panes on ← sync panes&lt;/p&gt;
-</description>
-        <pubDate>Mon, 31 May 2021 00:00:00 +0530</pubDate>
-        <link>/savvy/terminal/2021/05/31/tmux-notes.html</link>
-        <guid isPermaLink="true">/savvy/terminal/2021/05/31/tmux-notes.html</guid>
-        
-        
-        <category>Terminal</category>
-        
-      </item>
-    
-      <item>
         <title>Github For Dummies</title>
         <description>&lt;p&gt;Git was created in 1995 by Linus Torvalds, the creator of Linux, when he was frustrated by existing version control systems. But what exactly is a &lt;em&gt;version control system&lt;/em&gt;?&lt;/p&gt;
 
@@ -631,47 +678,218 @@ Sending: issue number 4
       </item>
     
       <item>
-        <title>On Ctrl-C Ctrl-V</title>
-        <description>&lt;p&gt;Javascript is extremely powerful, to say the least. One of its often overlooked features is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;copy&lt;/code&gt; event listener.&lt;/p&gt;
+        <title>Python For Dummies</title>
+        <description>&lt;p&gt;This is a transcript from my seminar on a Crash Course for Python3.&lt;/p&gt;
 
-&lt;p&gt;What damage can that do? Here, copy this ‘innocent’ command (&lt;em&gt;meant to be pasted into a shell&lt;/em&gt;) and paste it somewhere.&lt;/p&gt;
+&lt;h2 id=&quot;why-python&quot;&gt;Why Python?&lt;/h2&gt;
 
-&lt;p id=&quot;fakecopy&quot;&gt;&lt;code&gt;$ echo &quot;innocent text&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;It is very &lt;strong&gt;easy to learn&lt;/strong&gt; and &lt;strong&gt;elegant to look at&lt;/strong&gt;, even if your code is not perfect.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;No curly brackets&lt;/strong&gt; &lt;strong&gt;or semicolon&lt;/strong&gt; bull.&lt;/li&gt;
+  &lt;li&gt;It has the &lt;strong&gt;biggest programming community&lt;/strong&gt; by far. This means anything you want to build is already available open source, and the numerous libraries allow you to &lt;strong&gt;make whatever you can dream of&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;For the above reasons, competent Python programmers are in great demand right now. So &lt;strong&gt;MONEEEYYYYY&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;script&gt;
- document.getElementById('fakecopy').addEventListener('copy', function(e) {
-    e.clipboardData.setData('text/plain',
-        'echo &quot;This could\'ve be something malicious!😈&quot;\n');
-    e.preventDefault();
-});
-&lt;/script&gt;
+&lt;p&gt;&lt;img src=&quot;https://codingnomads.co/wp-content/uploads/2019/06/PythonSalaryDaxx2019.png&quot; alt=&quot;learn Python, python programming, python bootcamp, what is Python used for&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The text you just copied even has an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt; character, so the command will execute automatically if pasted in a shell, and &lt;strong&gt;I will have control over this system before you can even comprehend what just went down&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;will-this-talk-get-me-100k&quot;&gt;Will This Talk Get Me $100k?&lt;/h3&gt;
 
-&lt;p&gt;This is how the code works,&lt;/p&gt;
+&lt;p&gt;Well, probably not. But after the next 45 minutes, you will be able to read and write Python quite well and maybe do some data juggling with numpy and pandas.&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;fakecopy&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clipboardData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;text/plain&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;echo &quot;This could&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;ve be something malicious!😈&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;If you stick around until the end, I have something in store that will blow your mind.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The flow will tentatively go as follows,&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Intro to interpreter&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Hello World&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Variables And Types&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Operators&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lists&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Loops&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Conditions (if else)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Functions&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Imports&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Numpy Introduction&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pandas Introduction&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I’ve been told that there will be a separate session for numpy and pandas so we will not go too deep into that in this talk.&lt;/p&gt;
+
+&lt;p&gt;At the end of some sections, you will be given a problem to solve. We will not proceed until and unless everyone successfully solves it.&lt;/p&gt;
+
+&lt;h2 id=&quot;intro-to-the-interpreter&quot;&gt;Intro To The Interpreter&lt;/h2&gt;
+
+&lt;p&gt;When you open up IDLE or type python3 in your terminal, you should see something that looks like the following if your python is properly installed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;IDLE&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 2.02.23 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 1.40.55 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TERMINAL&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 1.41.46 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 1.41.46 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is called the interpreter. Interpreters execute code line by line.&lt;/p&gt;
+
+&lt;h2 id=&quot;hello-world&quot;&gt;HELLO WORLD&lt;/h2&gt;
+
+&lt;p&gt;Simply open up your interpreter and write&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Think you’ll be safe if by disabling Javascript? Sorry to burst your bubble but this can also be done with raw CSS.&lt;/p&gt;
+&lt;p&gt;And press enter. You should see it printed on the next line.&lt;/p&gt;
 
-&lt;p id=&quot;fakecopy&quot;&gt; &lt;code&gt;$ echo &lt;span style=&quot;font-size: 0;&quot;&gt;; rm -rf / ; echo &lt;/span&gt;&quot;looks safe to me!&quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 1.43.39 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 1.43.39 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This is how that works,&lt;/p&gt;
+&lt;p&gt;ezpz Lets move on.&lt;/p&gt;
 
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;font-size: 0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;'malicious command'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;looks safe to me!&quot;&lt;/span&gt;
+&lt;h2 id=&quot;variables-and-types&quot;&gt;VARIABLES AND TYPES&lt;/h2&gt;
+
+&lt;p&gt;Python is called a statically typed language which means that you dont have to say beforehand what the data type a variable is. This makes it much more pleasing to look at.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 1.52.15 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 1.52.15 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you might ask, if data types dont exist how can I convert an integer to a decimal?&lt;/p&gt;
+
+&lt;p&gt;You would simply use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data_type_you_want(variable_name)&lt;/code&gt; syntax. This is called &lt;strong&gt;typecasting&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 2.00.20 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 2.00.20 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;operators&quot;&gt;OPERATORS&lt;/h2&gt;
+
+&lt;p&gt;The usual &lt;strong&gt;addition (+)&lt;/strong&gt;, &lt;strong&gt;subtraction (-)&lt;/strong&gt;, &lt;strong&gt;multiplication (*)&lt;/strong&gt; and &lt;strong&gt;division (/)&lt;/strong&gt; are obviously present.&lt;/p&gt;
+
+&lt;p&gt;But apart from that we have the &lt;strong&gt;modulo (%)&lt;/strong&gt; operator, used to find the remainder after division of two numbers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 6.33.14 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 6.33.14 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And the &lt;strong&gt;power&lt;/strong&gt;(**) operator, to raise to a power.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 6.36.06 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 6.36.06 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;lists&quot;&gt;LISTS&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lists&lt;/code&gt; are very similar to arrays. They can contain any type of variable, and they can contain as many variables as you wish. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lists&lt;/code&gt; can also be iterated over in a very simple manner. Here is an example of how to build a list.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 3.00.12 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.00.12 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;List elements can be &lt;strong&gt;accessed using indexes&lt;/strong&gt; with square &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[]&lt;/code&gt; brackets . Lists are &lt;strong&gt;indexed from 0&lt;/strong&gt; .&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 3.03.17 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.03.17 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To add an element to the end of a list use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;append&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 3.14.02 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.14.02 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To remove an element from a list,&lt;/p&gt;
+
+&lt;p&gt;to remove by value use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;remove&lt;/code&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 3.16.20 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.16.20 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;to remove by index use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;del&lt;/code&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 3.17.42 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.17.42 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;loops&quot;&gt;LOOPS&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Python3 &lt;strong&gt;does not have curly brackets&lt;/strong&gt; to enclose units of code. It makes use of &lt;strong&gt;blocks&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A block is a area of code of written in the format of:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;block_head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Loops can run any number of commands as many times until a specified condition is valid.&lt;/p&gt;
+
+&lt;p&gt;In Python, there are two types of loops, for and while.&lt;/p&gt;
+
+&lt;p&gt;for loops iterate over a sequence,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 6.05.18 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 6.05.18 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;and while loops repeat as long as a certain boolean condition is valid.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 6.06.48 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 6.06.48 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conditions&quot;&gt;Conditions&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/coffee.png&quot; alt=&quot;coffee&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;if-else statements are the pillars of programming. Its quite simple. if a condition checks out then we run some code but if not then we run something else.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 9.25.55 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 9.25.55 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can also add more conditions using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;and&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;or&lt;/code&gt; operators between them. Open up your editor, lets write some conditions.&lt;/p&gt;
+
+&lt;h2 id=&quot;functions&quot;&gt;FUNCTIONS&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-are-functions&quot;&gt;What are Functions?&lt;/h3&gt;
+
+&lt;p&gt;Functions are a convenient way to divide your code into useful blocks, allowing us to order our code, make it more readable, reuse it and save some time. Also functions are a key way to define interfaces so programmers can share their code.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-do-you-write-functions-in-python&quot;&gt;How do you write functions in Python?&lt;/h3&gt;
+
+&lt;p&gt;Functions in python are defined using the block keyword “def”, followed with the function’s name as the block’s name. For example:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello From My Function!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Functions may also receive arguments (variables passed from the caller to the function). For example:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_function_with_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; , From My Function!, I wish you &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;greeting&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Functions may return a value to the caller, using the keyword- ‘return’ . For example:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sum_two_numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To call a function that has been defined, simply use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function_name(arguments)&lt;/code&gt;,&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_function_with_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AUVSI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Happy Holidays&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;imports&quot;&gt;IMPORTS&lt;/h2&gt;
+
+&lt;p&gt;Functions that are written in the same folder in different script or are installed through pip, can be imported directly into your program using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;from module_name import function_name&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;That gives your script access to the random function which prints a random number between 0 and 1.&lt;/p&gt;
+
+&lt;h2 id=&quot;now-for-the-surprise&quot;&gt;NOW FOR THE SURPRISE&lt;/h2&gt;
+
+&lt;p&gt;I was really excited to talk about this on the sesh but sadly we went way overtime :(&lt;/p&gt;
+
+&lt;p&gt;So lets say I made a script for a function that loops over a list like so,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 9.21.05 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 9.21.05 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, remove the colon at the start of the block and add an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;end&lt;/code&gt; at the end of &lt;strong&gt;each block&lt;/strong&gt; and save this new script with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.rb&lt;/code&gt; extension. Now let me run this with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby&lt;/code&gt; interpreter.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/savvy/assets/images/Screenshot 2020-11-18 at 9.24.18 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 9.24.18 PM&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Congratulations, you now not only know python, but also &lt;strong&gt;ruby&lt;/strong&gt;! (which is if you recall from the top, the language with the most pay!)&lt;/p&gt;
 </description>
-        <pubDate>Sat, 29 May 2021 17:00:00 +0530</pubDate>
-        <link>/savvy/hacking/2021/05/29/on-Copy-Paste.html</link>
-        <guid isPermaLink="true">/savvy/hacking/2021/05/29/on-Copy-Paste.html</guid>
+        <pubDate>Sun, 30 May 2021 00:00:00 +0530</pubDate>
+        <link>/savvy/programming/2021/05/30/python-for-dummies.html</link>
+        <guid isPermaLink="true">/savvy/programming/2021/05/30/python-for-dummies.html</guid>
         
         
-        <category>Hacking</category>
+        <category>Programming</category>
         
       </item>
     
