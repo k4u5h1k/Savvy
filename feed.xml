@@ -5,55 +5,55 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Jun 2021 00:30:18 +0530</pubDate>
-    <lastBuildDate>Wed, 02 Jun 2021 00:30:18 +0530</lastBuildDate>
+    <pubDate>Wed, 02 Jun 2021 15:51:00 +0530</pubDate>
+    <lastBuildDate>Wed, 02 Jun 2021 15:51:00 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Tmux Shortcuts</title>
         <description>&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmux&lt;/code&gt; is a session manager for your terminal.&lt;/p&gt;
 
-&lt;p&gt;ctrl-B     ← prefix&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl-B&lt;/code&gt;     ← prefix&lt;/p&gt;
 
-&lt;p&gt;prefix % ← split with vertical line&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix %&lt;/code&gt; ← split with vertical line&lt;/p&gt;
 
-&lt;p&gt;prefix “   ← split with horizontal line&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix &quot;&lt;/code&gt;   ← split with horizontal line&lt;/p&gt;
 
-&lt;p&gt;prefix x  ← kill pane&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix x&lt;/code&gt;  ← kill pane&lt;/p&gt;
 
-&lt;p&gt;prefix c ← new window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix c&lt;/code&gt; ← new window&lt;/p&gt;
 
-&lt;p&gt;prefix p ← move to previous window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix p&lt;/code&gt; ← move to previous window&lt;/p&gt;
 
-&lt;p&gt;prefix n ← move to next window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix n&lt;/code&gt; ← move to next window&lt;/p&gt;
 
-&lt;p&gt;prefix d ← detach&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix d&lt;/code&gt; ← detach&lt;/p&gt;
 
-&lt;p&gt;prefix z ← toggle pane full screen&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix z&lt;/code&gt; ← toggle pane full screen&lt;/p&gt;
 
-&lt;p&gt;prefix q ← show pane numbers; type number to go to pane&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix q&lt;/code&gt; ← show pane numbers; type number to go to pane&lt;/p&gt;
 
-&lt;p&gt;prefix , ← rename window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix ,&lt;/code&gt; ← rename window&lt;/p&gt;
 
-&lt;p&gt;prefix $ ← rename session&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix $&lt;/code&gt; ← rename session&lt;/p&gt;
 
-&lt;p&gt;prefix s ← list session&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix s&lt;/code&gt; ← list session&lt;/p&gt;
 
-&lt;p&gt;prefix ‘ # ← jump to # window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix ' #&lt;/code&gt; ← jump to # window&lt;/p&gt;
 
-&lt;p&gt;prefix ! ← send pane to new window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix !&lt;/code&gt; ← send pane to new window&lt;/p&gt;
 
-&lt;p&gt;prefix &amp;amp; ← kill window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix &amp;amp;&lt;/code&gt; ← kill window&lt;/p&gt;
 
-&lt;p&gt;prefix t ← big clock&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix t&lt;/code&gt; ← big clock&lt;/p&gt;
 
-&lt;p&gt;prefix o ← swap panes&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix o&lt;/code&gt; ← swap panes&lt;/p&gt;
 
-&lt;p&gt;prefix { ← move current pane left&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix {&lt;/code&gt; ← move current pane left&lt;/p&gt;
 
-&lt;p&gt;prefix } ← move current pane right&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix }&lt;/code&gt; ← move current pane right&lt;/p&gt;
 
-&lt;p&gt;:setw synchronize-panes on ← sync panes&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:setw synchronize-panes on&lt;/code&gt; ← sync panes&lt;/p&gt;
 </description>
         <pubDate>Wed, 02 Jun 2021 00:00:00 +0530</pubDate>
         <link>/savvy/terminal/2021/06/02/tmux-notes.html</link>
