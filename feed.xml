@@ -5,21 +5,23 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Jun 2021 15:51:00 +0530</pubDate>
-    <lastBuildDate>Wed, 02 Jun 2021 15:51:00 +0530</lastBuildDate>
+    <pubDate>Wed, 02 Jun 2021 18:18:28 +0530</pubDate>
+    <lastBuildDate>Wed, 02 Jun 2021 18:18:28 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Tmux Shortcuts</title>
         <description>&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmux&lt;/code&gt; is a session manager for your terminal.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl-B&lt;/code&gt;     ← prefix&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/EKWjP6H.jpg&quot; alt=&quot;terminal&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl-b&lt;/code&gt;     ← prefix&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix %&lt;/code&gt; ← split with vertical line&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix &quot;&lt;/code&gt;   ← split with horizontal line&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix &quot;&lt;/code&gt; ← split with horizontal line&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix x&lt;/code&gt;  ← kill pane&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix x&lt;/code&gt; ← kill pane&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix c&lt;/code&gt; ← new window&lt;/p&gt;
 
