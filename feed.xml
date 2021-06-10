@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Jun 2021 18:18:28 +0530</pubDate>
-    <lastBuildDate>Wed, 02 Jun 2021 18:18:28 +0530</lastBuildDate>
+    <pubDate>Thu, 10 Jun 2021 12:57:53 +0530</pubDate>
+    <lastBuildDate>Thu, 10 Jun 2021 12:57:53 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -113,7 +113,18 @@
     
       <item>
         <title>ROS for dummies</title>
-        <description>&lt;p&gt;Off the bat, ROS is not an operating system, or even remotely complicated.&lt;/p&gt;
+        <description>&lt;p&gt;This is the transcript of my seminar on ROS for Dummies, for Dreadnought.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-ros-is-not&quot;&gt;WHAT ROS IS NOT&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Operating system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Complicated.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h3 id=&quot;what-you-need-to-understand-this-post&quot;&gt;WHAT YOU NEED TO UNDERSTAND THIS POST&lt;/h3&gt;
 
@@ -524,7 +535,9 @@ Sending: issue number 4
     
       <item>
         <title>Github For Dummies</title>
-        <description>&lt;p&gt;Git was created in 1995 by Linus Torvalds, the creator of Linux, when he was frustrated by existing version control systems. But what exactly is a &lt;em&gt;version control system&lt;/em&gt;?&lt;/p&gt;
+        <description>&lt;p&gt;This is the transcript of my seminar on Github for Dummies.&lt;/p&gt;
+
+&lt;p&gt;Git was created in 1995 by Linus Torvalds, the creator of Linux, when he was frustrated by existing version control systems. But what exactly is a &lt;em&gt;version control system&lt;/em&gt;?&lt;/p&gt;
 
 &lt;p&gt;Suppose you are working on a huge software project, and at some point, after making several changes you run the program and it just crashes. You had closed all your editors before so you can’t hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Control-Z&lt;/code&gt; and simply undo your changes. What do you do now?&lt;/p&gt;
 
@@ -681,7 +694,7 @@ Sending: issue number 4
     
       <item>
         <title>Python For Dummies</title>
-        <description>&lt;p&gt;This is a transcript from my seminar on a Crash Course for Python3.&lt;/p&gt;
+        <description>&lt;p&gt;This is the transcript of my seminar on a Crash Course for Python3, for AUVSI.&lt;/p&gt;
 
 &lt;h2 id=&quot;why-python&quot;&gt;Why Python?&lt;/h2&gt;
 
