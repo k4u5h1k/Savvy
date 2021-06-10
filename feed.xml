@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Jun 2021 12:57:53 +0530</pubDate>
-    <lastBuildDate>Thu, 10 Jun 2021 12:57:53 +0530</lastBuildDate>
+    <pubDate>Thu, 10 Jun 2021 13:01:16 +0530</pubDate>
+    <lastBuildDate>Thu, 10 Jun 2021 13:01:16 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -112,7 +112,7 @@
       </item>
     
       <item>
-        <title>ROS for dummies</title>
+        <title>ROS for Dummies</title>
         <description>&lt;p&gt;This is the transcript of my seminar on ROS for Dummies, for Dreadnought.&lt;/p&gt;
 
 &lt;h3 id=&quot;what-ros-is-not&quot;&gt;WHAT ROS IS NOT&lt;/h3&gt;
