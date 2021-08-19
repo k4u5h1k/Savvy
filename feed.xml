@@ -5,18 +5,19 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Aug 2021 09:55:50 +0530</pubDate>
-    <lastBuildDate>Thu, 19 Aug 2021 09:55:50 +0530</lastBuildDate>
+    <pubDate>Thu, 19 Aug 2021 10:06:13 +0530</pubDate>
+    <lastBuildDate>Thu, 19 Aug 2021 10:06:13 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>GSoC '21 Report</title>
-        <description>&lt;h1 id=&quot;google-summer-of-code-2021-final-report&quot;&gt;Google Summer of Code 2021 Final Report&lt;/h1&gt;
-&lt;h2 id=&quot;kaushik-sivashankar--owasp-maryam&quot;&gt;Kaushik Sivashankar | OWASP Maryam&lt;/h2&gt;
+        <description>&lt;p&gt;Submitted report is &lt;a href=&quot;https://gist.github.com/k4u5h1k/f01d8d277e223d39dfca9c1fee3b829c&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;proposal-topic&quot;&gt;Proposal Topic&lt;/h2&gt;
+&lt;h2 id=&quot;project-owasp-maryam&quot;&gt;Project: OWASP Maryam&lt;/h2&gt;
 
-&lt;h3 id=&quot;dark-web-exploration-for-cyber-threat-analysis-and-expansion-of-data-sources&quot;&gt;Dark Web Exploration (for Cyber Threat Analysis) And Expansion of Data Sources&lt;/h3&gt;
+&lt;h2 id=&quot;proposal-dark-web-exploration-for-cyber-threat-analysis-and-expansion-of-data-sources&quot;&gt;Proposal: Dark Web Exploration (for Cyber Threat Analysis) And Expansion of Data Sources&lt;/h2&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;milestones-achieved&quot;&gt;Milestones Achieved&lt;/h2&gt;
 
