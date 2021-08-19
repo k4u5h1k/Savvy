@@ -5,9 +5,191 @@
     <description>For everything technical and interesting</description>
     <link>/savvy/</link>
     <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Aug 2021 12:14:00 +0530</pubDate>
-    <lastBuildDate>Wed, 18 Aug 2021 12:14:00 +0530</lastBuildDate>
+    <pubDate>Thu, 19 Aug 2021 09:55:50 +0530</pubDate>
+    <lastBuildDate>Thu, 19 Aug 2021 09:55:50 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>GSoC '21 Report</title>
+        <description>&lt;h1 id=&quot;google-summer-of-code-2021-final-report&quot;&gt;Google Summer of Code 2021 Final Report&lt;/h1&gt;
+&lt;h2 id=&quot;kaushik-sivashankar--owasp-maryam&quot;&gt;Kaushik Sivashankar | OWASP Maryam&lt;/h2&gt;
+
+&lt;h2 id=&quot;proposal-topic&quot;&gt;Proposal Topic&lt;/h2&gt;
+
+&lt;h3 id=&quot;dark-web-exploration-for-cyber-threat-analysis-and-expansion-of-data-sources&quot;&gt;Dark Web Exploration (for Cyber Threat Analysis) And Expansion of Data Sources&lt;/h3&gt;
+
+&lt;h2 id=&quot;milestones-achieved&quot;&gt;Milestones Achieved&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Designed and implemented a &lt;strong&gt;text document clustering module&lt;/strong&gt; using TFIDF, KMeans and FP-growth (for assigning titles to clusters). (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/6f3fa6ac1ae965dcb1a3ea13996f0ca576a4c4a2&quot;&gt;Commit&lt;/a&gt;) (&lt;a href=&quot;https://github.com/k4u5h1k/Doclustering&quot;&gt;Personal repo link&lt;/a&gt;)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Generate text data using,&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./maryam.py -e google -q 'Marvel' -l 10 --api --format &amp;gt; test.json&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Pass it to cluster module with,&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./maryam.py -e cluster --json test.json&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/yB48znAlJbm1dqg.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.49.58 PM&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/4UYNB2oLEyXCH5b.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.50.48 PM&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/8hB1H6CoGxEweuP.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.51.08 PM&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/cDrgm1nN9354dXM.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.51.23 PM&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/fXH8nac1eJjmVBS.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.51.43 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Designed and implemented a &lt;strong&gt;smart dark web crawler module&lt;/strong&gt;, using a custom TFIDF text retriever class using cosine similarity to rank best pages to crawl per Snowball Sampling iteration. (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/ee12cadb82a8dc9984217d1f5b8c082f54377897&quot;&gt;Commit&lt;/a&gt;) (Note: explicit results not shown unless searched for)&lt;/p&gt;
+
+    &lt;p&gt;In progress:&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/cwAM84l6opqk7Ov.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.55.42 PM&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;Results after reaching target depth:&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/4LxusaRzfMbF9Vk.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.58.04 PM&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Implemented various search modules&lt;/strong&gt; over diverse sources, namely,&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Phone Number Search&lt;/strong&gt; using NumVerify (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/141&quot;&gt;PR&lt;/a&gt;).&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/eJMigsTxXUAN4fH.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.16.23 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Dictionary&lt;/strong&gt; module using Google Dictionary (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/215&quot;&gt;PR&lt;/a&gt;).&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/Vgly24fUj6sGALz.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.14.48 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;SanctionSearch&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/153&quot;&gt;PR&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/cqlpykQ61W2AIKB.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.16.02 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Gigablast&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/143&quot;&gt;PR&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/q5mJPRXf4TdU1Su.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.17.08 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Reddit&lt;/strong&gt; Search (without official API or scraping) (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/c216f9fd8c701e9b7f955ecab9b85cb0a35a265b&quot;&gt;Commit&lt;/a&gt;).&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/TGz8VqP1m5nxgRY.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.18.26 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Twitter &lt;strong&gt;Tweet Search&lt;/strong&gt; (without official API or scraping) w/ Sentiment Analysis (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/d140cc7661cd0ac34edea8fcb24e6cc80786a82f&quot;&gt;Commit&lt;/a&gt;).&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/NV7lUpSZmDawndP.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.20.22 PM&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/o9kmeO75TQj4v3h.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.20.52 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;ActiveSearchResults&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/133&quot;&gt;PR&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/MkwbWTxHyGsova2.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.21.13 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;PirateBay&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/117&quot;&gt;PR&lt;/a&gt;) (Later &lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/6d1f57e08248502968f5212fe5bfdef21572d8ef&quot;&gt;updated&lt;/a&gt; to use undocumented backend API)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/6WtSmcPRwa2inr7.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.21.55 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Google Scholar&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/236&quot;&gt;PR&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/omkVBeMxSdfYIUg.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.22.45 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;ArXiv&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/116&quot;&gt;PR&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/hy4L1ed8KzuqfHv.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.23.27 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;PubMed&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/120&quot;&gt;PR&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/v8m9GMIAJeqy2hi.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.25.07 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Core.ac.uk Search&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/241&quot;&gt;PR&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/J53ptdNGXx6ZvMF.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.26.27 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Famous Person Search&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/4eb8e42b63ddb9044a13ce6e38bc22a3957a77a5&quot;&gt;Commit&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/MqWcs2yRrvm6Tb5.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.28.36 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Article Search&lt;/strong&gt; (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/1a270ef3a7dcbe4392d857117d7537889e31143b&quot;&gt;Commit&lt;/a&gt;)&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/Ydy3bA1jkBs8pne.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.29.30 PM&quot; /&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;And &lt;strong&gt;standalone utility classes&lt;/strong&gt;, namely,&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Web Page Term Frequency Histogram&lt;/strong&gt; class. (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/ef9d7477c2ffed4b0aeeddbdb1e84bc2fd5f4512#diff-43d43736de37488c6d4a0bd64733d58754c69a4a97d0b03b37e1951fcb0e84c6&quot;&gt;Commit&lt;/a&gt; (Brought to Maryam from an extension repo which is now deleted to reduce clutter))&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/9UOHRswtXjoeTVf.png&quot; alt=&quot;Jen&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;Image taken from famous person module output for Jennifer Aniston.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Safe Search&lt;/strong&gt; Class (manages captcha and evades engine specific errors using rotation). (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/9587ef7b3fe8c5dfc785366e43d17f87dd4a0e40&quot;&gt;Commit&lt;/a&gt; (previously named CaptchaManager))&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Discovered startup lag&lt;/strong&gt; due to heavy imports such as matplotlib and implemented  optimization with cleanup resulting in significant reduction in startup time. (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/45e35af1686702336cb897f0563d15b39df244ef&quot;&gt;Commit 1&lt;/a&gt;, &lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/2ca24ee4b8920e1c9758d6aeb79ad5a5cb090e83&quot;&gt;Commit 2&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Restructured and cleaned up Maryam’s file tree&lt;/strong&gt; in order to make it suitable for packaging and distribution. (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/pull/233&quot;&gt;PR&lt;/a&gt; (closed but later rechecked and &lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commit/438e72ede11bc707fccafa02bc44e731aebe4d0c&quot;&gt;commited&lt;/a&gt; manually by mentor saeeddhqan))&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Packaged and deployed&lt;/strong&gt; &lt;strong&gt;Maryam&lt;/strong&gt; to PyPi. (&lt;a href=&quot;https://pypi.org/project/maryam/&quot;&gt;link&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fixed critical bug affecting OSX on Python3.8 and 3.9. (&lt;a href=&quot;https://github.com/saeeddhqan/Maryam/issues/246&quot;&gt;Issue&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Made &lt;strong&gt;numerous bug fixes&lt;/strong&gt;, all of which can be accessed from the list of my &lt;a href=&quot;https://github.com/saeeddhqan/Maryam/commits?author=k4u5h1k&quot;&gt;commits&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;to-continue-my-work&quot;&gt;To Continue My Work&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Implement &lt;strong&gt;frontend for Web API&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;A way to test module utils (at least engines) without module_api or module_run.&lt;/li&gt;
+  &lt;li&gt;Iris is key. The ultimate goal of Maryam is to &lt;strong&gt;improve Iris to the extent at which it can smartly leverage collaboratively, the capabilities of all modules&lt;/strong&gt; and present its output intuitively.
+    &lt;ul&gt;
+      &lt;li&gt;This requires us to classify an input query into the module that (we think) can handle it best.&lt;/li&gt;
+      &lt;li&gt;Output could be formatted as accordion of most suitable module outputs.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 19 Aug 2021 00:00:00 +0530</pubDate>
+        <link>/savvy/programming/2021/08/19/gsoc-'21-report.html</link>
+        <guid isPermaLink="true">/savvy/programming/2021/08/19/gsoc-'21-report.html</guid>
+        
+        
+        <category>Programming</category>
+        
+      </item>
     
       <item>
         <title>Tmux Shortcuts</title>
