@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>For everything technical and interesting</description>
-    <link>/savvy/</link>
-    <atom:link href="/savvy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 19 Aug 2021 10:06:13 +0530</pubDate>
-    <lastBuildDate>Thu, 19 Aug 2021 10:06:13 +0530</lastBuildDate>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 19 Sep 2021 18:36:43 +0530</pubDate>
+    <lastBuildDate>Sun, 19 Sep 2021 18:36:43 +0530</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -184,8 +184,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 19 Aug 2021 00:00:00 +0530</pubDate>
-        <link>/savvy/programming/2021/08/19/gsoc-'21-report.html</link>
-        <guid isPermaLink="true">/savvy/programming/2021/08/19/gsoc-'21-report.html</guid>
+        <link>/programming/2021/08/19/gsoc-'21-report.html</link>
+        <guid isPermaLink="true">/programming/2021/08/19/gsoc-'21-report.html</guid>
         
         
         <category>Programming</category>
@@ -241,8 +241,8 @@
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:setw synchronize-panes on&lt;/code&gt; ← sync panes&lt;/p&gt;
 </description>
         <pubDate>Wed, 02 Jun 2021 00:00:00 +0530</pubDate>
-        <link>/savvy/terminal/2021/06/02/tmux-notes.html</link>
-        <guid isPermaLink="true">/savvy/terminal/2021/06/02/tmux-notes.html</guid>
+        <link>/terminal/2021/06/02/tmux-notes.html</link>
+        <guid isPermaLink="true">/terminal/2021/06/02/tmux-notes.html</guid>
         
         
         <category>Terminal</category>
@@ -286,8 +286,8 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 01 Jun 2021 17:00:00 +0530</pubDate>
-        <link>/savvy/hacking/2021/06/01/on-Copy-Paste.html</link>
-        <guid isPermaLink="true">/savvy/hacking/2021/06/01/on-Copy-Paste.html</guid>
+        <link>/hacking/2021/06/01/on-Copy-Paste.html</link>
+        <guid isPermaLink="true">/hacking/2021/06/01/on-Copy-Paste.html</guid>
         
         
         <category>Hacking</category>
@@ -708,8 +708,8 @@ Sending: issue number 4
 
 </description>
         <pubDate>Tue, 01 Jun 2021 00:00:00 +0530</pubDate>
-        <link>/savvy/programming/2021/06/01/ros-for-dummies.html</link>
-        <guid isPermaLink="true">/savvy/programming/2021/06/01/ros-for-dummies.html</guid>
+        <link>/programming/2021/06/01/ros-for-dummies.html</link>
+        <guid isPermaLink="true">/programming/2021/06/01/ros-for-dummies.html</guid>
         
         
         <category>Programming</category>
@@ -867,8 +867,8 @@ Sending: issue number 4
 &lt;p&gt;You are now equipped with the power of git!&lt;/p&gt;
 </description>
         <pubDate>Sun, 30 May 2021 17:06:13 +0530</pubDate>
-        <link>/savvy/programming/2021/05/30/github-for-dummies.html</link>
-        <guid isPermaLink="true">/savvy/programming/2021/05/30/github-for-dummies.html</guid>
+        <link>/programming/2021/05/30/github-for-dummies.html</link>
+        <guid isPermaLink="true">/programming/2021/05/30/github-for-dummies.html</guid>
         
         
         <category>Programming</category>
@@ -1083,8 +1083,8 @@ Sending: issue number 4
 &lt;p&gt;Congratulations, you now not only know python, but also &lt;strong&gt;ruby&lt;/strong&gt;! (which is if you recall from the top, the language with the most pay!)&lt;/p&gt;
 </description>
         <pubDate>Sun, 30 May 2021 00:00:00 +0530</pubDate>
-        <link>/savvy/programming/2021/05/30/python-for-dummies.html</link>
-        <guid isPermaLink="true">/savvy/programming/2021/05/30/python-for-dummies.html</guid>
+        <link>/programming/2021/05/30/python-for-dummies.html</link>
+        <guid isPermaLink="true">/programming/2021/05/30/python-for-dummies.html</guid>
         
         
         <category>Programming</category>
