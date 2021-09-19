@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Savvy - For everything technical and interesting</title>
+    <meta name="description" content="another blog" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css " />
+
+</head>
+<body class="home-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">GSoC '21 Report</h1>
+            <section class="post-meta">
+                
+                    on Programming
+                
+                <time class="post-date" datetime="2021-08-19">19 Aug 2021</time>
+            </section>
+        </header>
+        <br>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="">
+                
+                    <span class="blog-title">Savvy</span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2021-08-19">19 Aug 2021</time>
+            
+                on Programming
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">GSoC '21 Report</h1> -->
+
+        <section class="post-content">
+            <p>Submitted report is <a href="https://gist.github.com/k4u5h1k/f01d8d277e223d39dfca9c1fee3b829c">here</a></p>
+
+<h2 id="project-owasp-maryam">Project: OWASP Maryam</h2>
+
+<h2 id="proposal-dark-web-exploration-for-cyber-threat-analysis-and-expansion-of-data-sources">Proposal: Dark Web Exploration (for Cyber Threat Analysis) And Expansion of Data Sources</h2>
+
+<p><br /></p>
+
+<h2 id="milestones-achieved">Milestones Achieved</h2>
+
+<ul>
+  <li>
+    <p>Designed and implemented a <strong>text document clustering module</strong> using TFIDF, KMeans and FP-growth (for assigning titles to clusters). (<a href="https://github.com/saeeddhqan/Maryam/commit/6f3fa6ac1ae965dcb1a3ea13996f0ca576a4c4a2">Commit</a>) (<a href="https://github.com/k4u5h1k/Doclustering">Personal repo link</a>)</p>
+
+    <ul>
+      <li>
+        <p>Generate text data using,</p>
+
+        <p><code class="language-plaintext highlighter-rouge">./maryam.py -e google -q 'Marvel' -l 10 --api --format &gt; test.json</code></p>
+      </li>
+      <li>
+        <p>Pass it to cluster module with,</p>
+
+        <p><code class="language-plaintext highlighter-rouge">./maryam.py -e cluster --json test.json</code></p>
+
+        <p><img src="https://i.loli.net/2021/08/17/yB48znAlJbm1dqg.png" alt="Screenshot 2021-08-17 at 12.49.58 PM" /></p>
+
+        <p><img src="https://i.loli.net/2021/08/17/4UYNB2oLEyXCH5b.png" alt="Screenshot 2021-08-17 at 12.50.48 PM" /></p>
+
+        <p><img src="https://i.loli.net/2021/08/17/8hB1H6CoGxEweuP.png" alt="Screenshot 2021-08-17 at 12.51.08 PM" /></p>
+
+        <p><img src="https://i.loli.net/2021/08/17/cDrgm1nN9354dXM.png" alt="Screenshot 2021-08-17 at 12.51.23 PM" /></p>
+
+        <p><img src="https://i.loli.net/2021/08/17/fXH8nac1eJjmVBS.png" alt="Screenshot 2021-08-17 at 12.51.43 PM" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Designed and implemented a <strong>smart dark web crawler module</strong>, using a custom TFIDF text retriever class using cosine similarity to rank best pages to crawl per Snowball Sampling iteration. (<a href="https://github.com/saeeddhqan/Maryam/commit/ee12cadb82a8dc9984217d1f5b8c082f54377897">Commit</a>) (Note: explicit results not shown unless searched for)</p>
+
+    <p>In progress:</p>
+
+    <p><img src="https://i.loli.net/2021/08/17/cwAM84l6opqk7Ov.png" alt="Screenshot 2021-08-17 at 12.55.42 PM" /></p>
+
+    <p>Results after reaching target depth:</p>
+
+    <p><img src="https://i.loli.net/2021/08/17/4LxusaRzfMbF9Vk.png" alt="Screenshot 2021-08-17 at 12.58.04 PM" /></p>
+  </li>
+  <li>
+    <p><strong>Implemented various search modules</strong> over diverse sources, namely,</p>
+
+    <ul>
+      <li>
+        <p><strong>Phone Number Search</strong> using NumVerify (<a href="https://github.com/saeeddhqan/Maryam/pull/141">PR</a>).</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/eJMigsTxXUAN4fH.png" alt="Screenshot 2021-08-17 at 12.16.23 PM" /></p>
+      </li>
+      <li>
+        <p><strong>Dictionary</strong> module using Google Dictionary (<a href="https://github.com/saeeddhqan/Maryam/pull/215">PR</a>).</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/Vgly24fUj6sGALz.png" alt="Screenshot 2021-08-17 at 12.14.48 PM" /></p>
+      </li>
+      <li>
+        <p><strong>SanctionSearch</strong> (<a href="https://github.com/saeeddhqan/Maryam/pull/153">PR</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/cqlpykQ61W2AIKB.png" alt="Screenshot 2021-08-17 at 12.16.02 PM" /></p>
+      </li>
+      <li>
+        <p><strong>Gigablast</strong> (<a href="https://github.com/saeeddhqan/Maryam/pull/143">PR</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/q5mJPRXf4TdU1Su.png" alt="Screenshot 2021-08-17 at 12.17.08 PM" /></p>
+      </li>
+      <li>
+        <p><strong>Reddit</strong> Search (without official API or scraping) (<a href="https://github.com/saeeddhqan/Maryam/commit/c216f9fd8c701e9b7f955ecab9b85cb0a35a265b">Commit</a>).</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/TGz8VqP1m5nxgRY.png" alt="Screenshot 2021-08-17 at 12.18.26 PM" /></p>
+      </li>
+      <li>
+        <p>Twitter <strong>Tweet Search</strong> (without official API or scraping) w/ Sentiment Analysis (<a href="https://github.com/saeeddhqan/Maryam/commit/d140cc7661cd0ac34edea8fcb24e6cc80786a82f">Commit</a>).</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/NV7lUpSZmDawndP.png" alt="Screenshot 2021-08-17 at 12.20.22 PM" /></p>
+
+        <p><img src="https://i.loli.net/2021/08/17/o9kmeO75TQj4v3h.png" alt="Screenshot 2021-08-17 at 12.20.52 PM" /></p>
+      </li>
+      <li>
+        <p><strong>ActiveSearchResults</strong> (<a href="https://github.com/saeeddhqan/Maryam/pull/133">PR</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/MkwbWTxHyGsova2.png" alt="Screenshot 2021-08-17 at 12.21.13 PM" /></p>
+      </li>
+      <li>
+        <p><strong>PirateBay</strong> (<a href="https://github.com/saeeddhqan/Maryam/pull/117">PR</a>) (Later <a href="https://github.com/saeeddhqan/Maryam/commit/6d1f57e08248502968f5212fe5bfdef21572d8ef">updated</a> to use undocumented backend API)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/6WtSmcPRwa2inr7.png" alt="Screenshot 2021-08-17 at 12.21.55 PM" /></p>
+      </li>
+      <li>
+        <p><strong>Google Scholar</strong> (<a href="https://github.com/saeeddhqan/Maryam/pull/236">PR</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/omkVBeMxSdfYIUg.png" alt="Screenshot 2021-08-17 at 12.22.45 PM" /></p>
+      </li>
+      <li>
+        <p><strong>ArXiv</strong> (<a href="https://github.com/saeeddhqan/Maryam/pull/116">PR</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/hy4L1ed8KzuqfHv.png" alt="Screenshot 2021-08-17 at 12.23.27 PM" /></p>
+      </li>
+      <li>
+        <p><strong>PubMed</strong> (<a href="https://github.com/saeeddhqan/Maryam/pull/120">PR</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/v8m9GMIAJeqy2hi.png" alt="Screenshot 2021-08-17 at 12.25.07 PM" /></p>
+      </li>
+      <li>
+        <p><strong>Core.ac.uk Search</strong> (<a href="https://github.com/saeeddhqan/Maryam/pull/241">PR</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/J53ptdNGXx6ZvMF.png" alt="Screenshot 2021-08-17 at 12.26.27 PM" /></p>
+      </li>
+      <li>
+        <p><strong>Famous Person Search</strong> (<a href="https://github.com/saeeddhqan/Maryam/commit/4eb8e42b63ddb9044a13ce6e38bc22a3957a77a5">Commit</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/MqWcs2yRrvm6Tb5.png" alt="Screenshot 2021-08-17 at 12.28.36 PM" /></p>
+      </li>
+      <li>
+        <p><strong>Article Search</strong> (<a href="https://github.com/saeeddhqan/Maryam/commit/1a270ef3a7dcbe4392d857117d7537889e31143b">Commit</a>)</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/Ydy3bA1jkBs8pne.png" alt="Screenshot 2021-08-17 at 12.29.30 PM" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>And <strong>standalone utility classes</strong>, namely,</p>
+
+    <ul>
+      <li>
+        <p><strong>Web Page Term Frequency Histogram</strong> class. (<a href="https://github.com/saeeddhqan/Maryam/commit/ef9d7477c2ffed4b0aeeddbdb1e84bc2fd5f4512#diff-43d43736de37488c6d4a0bd64733d58754c69a4a97d0b03b37e1951fcb0e84c6">Commit</a> (Brought to Maryam from an extension repo which is now deleted to reduce clutter))</p>
+
+        <p><img src="https://i.loli.net/2021/08/17/9UOHRswtXjoeTVf.png" alt="Jen" /></p>
+
+        <p>Image taken from famous person module output for Jennifer Aniston.</p>
+      </li>
+      <li>
+        <p><strong>Safe Search</strong> Class (manages captcha and evades engine specific errors using rotation). (<a href="https://github.com/saeeddhqan/Maryam/commit/9587ef7b3fe8c5dfc785366e43d17f87dd4a0e40">Commit</a> (previously named CaptchaManager))</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Discovered startup lag</strong> due to heavy imports such as matplotlib and implemented  optimization with cleanup resulting in significant reduction in startup time. (<a href="https://github.com/saeeddhqan/Maryam/commit/45e35af1686702336cb897f0563d15b39df244ef">Commit 1</a>, <a href="https://github.com/saeeddhqan/Maryam/commit/2ca24ee4b8920e1c9758d6aeb79ad5a5cb090e83">Commit 2</a>)</p>
+  </li>
+  <li>
+    <p><strong>Restructured and cleaned up Maryam’s file tree</strong> in order to make it suitable for packaging and distribution. (<a href="https://github.com/saeeddhqan/Maryam/pull/233">PR</a> (closed but later rechecked and <a href="https://github.com/saeeddhqan/Maryam/commit/438e72ede11bc707fccafa02bc44e731aebe4d0c">commited</a> manually by mentor saeeddhqan))</p>
+  </li>
+  <li>
+    <p><strong>Packaged and deployed</strong> <strong>Maryam</strong> to PyPi. (<a href="https://pypi.org/project/maryam/">link</a>)</p>
+  </li>
+  <li>
+    <p>Fixed critical bug affecting OSX on Python3.8 and 3.9. (<a href="https://github.com/saeeddhqan/Maryam/issues/246">Issue</a>)</p>
+  </li>
+  <li>
+    <p>Made <strong>numerous bug fixes</strong>, all of which can be accessed from the list of my <a href="https://github.com/saeeddhqan/Maryam/commits?author=k4u5h1k">commits</a>.</p>
+  </li>
+</ul>
+
+<h2 id="to-continue-my-work">To Continue My Work</h2>
+
+<ul>
+  <li>Implement <strong>frontend for Web API</strong>.</li>
+  <li>A way to test module utils (at least engines) without module_api or module_run.</li>
+  <li>Iris is key. The ultimate goal of Maryam is to <strong>improve Iris to the extent at which it can smartly leverage collaboratively, the capabilities of all modules</strong> and present its output intuitively.
+    <ul>
+      <li>This requires us to classify an input query into the module that (we think) can handle it best.</li>
+      <li>Output could be formatted as accordion of most suitable module outputs.</li>
+    </ul>
+  </li>
+</ul>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png)">
+                    <span class="hidden">Kaushik's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> Kaushik </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        Just like writing.
+                    </p>
+                </section>
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=GSoC '21 Report&amp;url=kaushik.me/programming/2021/08/19/gsoc-'21-report.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=kaushik.me/programming/2021/08/19/gsoc-'21-report.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=kaushik.me/programming/2021/08/19/gsoc-'21-report.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>
