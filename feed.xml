@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Jan 2022 16:10:00 +0530</pubDate>
-    <lastBuildDate>Sat, 22 Jan 2022 16:10:00 +0530</lastBuildDate>
+    <pubDate>Sat, 22 Jan 2022 16:39:17 +0530</pubDate>
+    <lastBuildDate>Sat, 22 Jan 2022 16:39:17 +0530</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -57,7 +57,7 @@
 
 &lt;h1 id=&quot;step---2---set-up-nginx-on-your-pi&quot;&gt;STEP - 2 - Set up NGINX on your Pi&lt;/h1&gt;
 
-&lt;p&gt;NGINX is our web server of choice, which will see the url requested by the client and serve the appropriate webpage. so something like http://musings.kaushik.me will take you to where I have placed the musings html in my Pi, while http://savvy.kaushik.me will take you to the code location of savvy.&lt;/p&gt;
+&lt;p&gt;NGINX is our web server of choice, which will see the url requested by the client and serve the appropriate webpage. so something like &lt;a href=&quot;http://musings.kaushik.me&quot;&gt;http://musings.kaushik.me&lt;/a&gt; will take you to where I have placed the musings html in my Pi, while &lt;a href=&quot;http://savvy.kaushik.me&quot;&gt;http://savvy.kaushik.me&lt;/a&gt; will take you to the code location of savvy.&lt;/p&gt;
 
 &lt;p&gt;To install NGINX, simply use&lt;/p&gt;
 
