@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Jan 2022 16:39:17 +0530</pubDate>
-    <lastBuildDate>Sat, 22 Jan 2022 16:39:17 +0530</lastBuildDate>
+    <pubDate>Sat, 22 Jan 2022 16:40:48 +0530</pubDate>
+    <lastBuildDate>Sat, 22 Jan 2022 16:40:48 +0530</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -65,7 +65,7 @@
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;nginx
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If  that fails, follow https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages.&lt;/p&gt;
+&lt;p&gt;If  that fails, follow the &lt;a href=&quot;https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages&quot;&gt;official guide&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Once installed you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo systemctl start nginx&lt;/code&gt; and access http://raspberrypi.local to confirm that our NGINX is running.&lt;/p&gt;
 
