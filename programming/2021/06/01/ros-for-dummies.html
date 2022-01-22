@@ -111,7 +111,7 @@ few lines of a popular language, data visualization, simple data transfer betwee
 
 <p>When you subscribe to a magazine on some topic, the publisher periodically sends you the exact magazine you subscribed for. However you as a subscriber cannot send anything to the publisher. This is exactly what happens between nodes. node 1 can subscribe to node 2 on a particular topic, which means that node 1 can listen to node 2 talk about that particular topic. Nodes are free to publish or subscribe to as many other nodes as they want but the communication along a single connection is always one way. A service is not much different except now the communication is two way kind of like a client-server interface and the server provides whatever data the client requests.</p>
 
-<p><img src="/savvy/assets/images/Nodes-TopicandService.gif" alt="Nodes-TopicandService" /></p>
+<p><img src="/assets/images/Nodes-TopicandService.gif" alt="Nodes-TopicandService" /></p>
 
 <p>An action is same as a service but it is not blocking, which means that the client can do whatever it wants while it waits for a response from the action server. Parameters are global variables that all nodes can access (and very rarely modify).</p>
 
@@ -139,9 +139,9 @@ just sits pretty <span class="k">until </span>i hit Control-C
 <span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
     <span class="n">first_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s">'my_first_node'</span><span class="p">)</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">spin</span><span class="p">(</span><span class="n">first_node</span><span class="p">)</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">first_node</span><span class="p">)</span>
 
 <span class="n">main</span><span class="p">()</span>
 </code></pre></div></div>
@@ -152,19 +152,19 @@ just sits pretty <span class="k">until </span>i hit Control-C
 <span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
 </code></pre></div></div>
 
-<p>Self explanatory, first we import the <code class="language-plaintext highlighter-rouge">rclpy</code> library and the <code class="language-plaintext highlighter-rouge">Node</code> class,</p>
+<p>Self explanatory, first we import the <code class="highlighter-rouge">rclpy</code> library and the <code class="highlighter-rouge">Node</code> class,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
     <span class="n">first_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s">'my_first_node'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>We initiate the library and then instantiate our <code class="language-plaintext highlighter-rouge">node</code>,</p>
+<p>We initiate the library and then instantiate our <code class="highlighter-rouge">node</code>,</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="n">rclpy</span><span class="p">.</span><span class="n">spin</span><span class="p">(</span><span class="n">first_node</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">first_node</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>If we just instantiate our node and dont put this line the program execution will stop there. If we want to keep our node running until we kill it with <code class="language-plaintext highlighter-rouge">Control-C</code> or otherwise, this must be used.</p>
+<p>If we just instantiate our node and dont put this line the program execution will stop there. If we want to keep our node running until we kill it with <code class="highlighter-rouge">Control-C</code> or otherwise, this must be used.</p>
 
 <p>Congratulations you just learnt to write a node! Lets move on to something more advanced.</p>
 
@@ -193,70 +193,70 @@ Sending: issue number 6
 
 <span class="k">class</span> <span class="nc">MagazinePublisher</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="s">'magazine_publisher'</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">playboy</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">create_publisher</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> 
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="s">'magazine_publisher'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">playboy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_publisher</span><span class="p">(</span><span class="n">String</span><span class="p">,</span> 
                 <span class="s">'fashion'</span><span class="p">,</span>
                 <span class="mi">10</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">timer</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> 
-                <span class="bp">self</span><span class="p">.</span><span class="n">timer_callback</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> 
+                <span class="bp">self</span><span class="o">.</span><span class="n">timer_callback</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="nf">timer_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="n">String</span><span class="p">()</span>
-        <span class="n">msg</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">'issue number '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">i</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">playboy</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'Sending: </span><span class="si">{</span><span class="n">msg</span><span class="p">.</span><span class="n">data</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">'issue number '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">playboy</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Sending: {msg.data}'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="n">rclpy</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">magazine_publisher</span> <span class="o">=</span> <span class="n">MagazinePublisher</span><span class="p">()</span>
-<span class="n">rclpy</span><span class="p">.</span><span class="n">spin</span><span class="p">(</span><span class="n">magazine_publisher</span><span class="p">)</span>
+<span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">magazine_publisher</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Commencing surgery,</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">rclpyfrom</span> <span class="n">rclpy</span><span class="p">.</span><span class="n">node</span> <span class="kn">import</span> <span class="nn">Node</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">rclpyfrom</span> <span class="n">rclpy</span><span class="o">.</span><span class="n">node</span> <span class="kn">import</span> <span class="nn">Node</span>
 <span class="kn">from</span> <span class="nn">std_msgs.msg</span> <span class="kn">import</span> <span class="n">String</span>
 </code></pre></div></div>
 
-<p>Apart from our usual imports there is a new one. In this project we are not only creating a node but also sending stuff which needs to be in a <code class="language-plaintext highlighter-rouge">String</code> class (not to be confused with the string data type). The actual message goes in <code class="language-plaintext highlighter-rouge">String.data</code>,</p>
+<p>Apart from our usual imports there is a new one. In this project we are not only creating a node but also sending stuff which needs to be in a <code class="highlighter-rouge">String</code> class (not to be confused with the string data type). The actual message goes in <code class="highlighter-rouge">String.data</code>,</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MagazinePublisher</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>    
   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>        
-    <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="s">'magazine_publisher'</span><span class="p">)</span>        
-    <span class="bp">self</span><span class="p">.</span><span class="n">playboy</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">create_publisher</span><span class="p">(</span><span class="n">String</span><span class="p">,</span>                 
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="s">'magazine_publisher'</span><span class="p">)</span>        
+    <span class="bp">self</span><span class="o">.</span><span class="n">playboy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_publisher</span><span class="p">(</span><span class="n">String</span><span class="p">,</span>                 
                                          <span class="s">'fashion'</span><span class="p">,</span>                
                                          <span class="mi">10</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Here we declare our publisher class that declares itself as a Node by the name <code class="language-plaintext highlighter-rouge">magazine_publisher</code>, and publishing on the topic <code class="language-plaintext highlighter-rouge">fashion</code>  <del>Didn’t know what else to call playboy sorry</del> with a buffer size of <code class="language-plaintext highlighter-rouge">10</code>.</p>
+<p>Here we declare our publisher class that declares itself as a Node by the name <code class="highlighter-rouge">magazine_publisher</code>, and publishing on the topic <code class="highlighter-rouge">fashion</code>  <del>Didn’t know what else to call playboy sorry</del> with a buffer size of <code class="highlighter-rouge">10</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="bp">self</span><span class="p">.</span><span class="n">timer</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> 
-                <span class="bp">self</span><span class="p">.</span><span class="n">timer_callback</span><span class="p">)</span>
-  <span class="bp">self</span><span class="p">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="bp">self</span><span class="o">.</span><span class="n">timer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> 
+                <span class="bp">self</span><span class="o">.</span><span class="n">timer_callback</span><span class="p">)</span>
+  <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div></div>
 
-<p>Now we create a <code class="language-plaintext highlighter-rouge">timer</code> that calls our sender function every 1 second.</p>
+<p>Now we create a <code class="highlighter-rouge">timer</code> that calls our sender function every 1 second.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">timer_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="n">msg</span> <span class="o">=</span> <span class="n">String</span><span class="p">()</span>
-      <span class="n">msg</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">'issue number '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">i</span><span class="p">)</span>
-      <span class="bp">self</span><span class="p">.</span><span class="n">playboy</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-      <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'Sending: </span><span class="si">{</span><span class="n">msg</span><span class="p">.</span><span class="n">data</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
-      <span class="bp">self</span><span class="p">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="n">msg</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="s">'issue number '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">i</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">playboy</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'Sending: {msg.data}'</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </code></pre></div></div>
 
-<p>This function gets called by the <code class="language-plaintext highlighter-rouge">timer</code> every second. It uses the <code class="language-plaintext highlighter-rouge">playboy</code> object to send magazine issues as messages.</p>
+<p>This function gets called by the <code class="highlighter-rouge">timer</code> every second. It uses the <code class="highlighter-rouge">playboy</code> object to send magazine issues as messages.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
     <span class="n">magazine_publisher</span> <span class="o">=</span> <span class="n">MagazinePublisher</span><span class="p">()</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">spin</span><span class="p">(</span><span class="n">magazine_publisher</span><span class="p">)</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">magazine_publisher</span><span class="p">)</span>
 
 <span class="n">main</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>Like the first node we initiate <code class="language-plaintext highlighter-rouge">rclpy</code> then instantiate <code class="language-plaintext highlighter-rouge">MagazinePublisher</code> and spin it.</p>
+<p>Like the first node we initiate <code class="highlighter-rouge">rclpy</code> then instantiate <code class="highlighter-rouge">MagazinePublisher</code> and spin it.</p>
 
 <h3 id="subscriber">SUBSCRIBER</h3>
 
@@ -279,24 +279,24 @@ Recieved issue number 6
 
 <span class="k">class</span> <span class="nc">MagazineSubscriber</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="s">'magazine_subscriber'</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">String</span><span class="p">,</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="s">'magazine_subscriber'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">String</span><span class="p">,</span>
             <span class="s">'fashion'</span><span class="p">,</span>
-            <span class="bp">self</span><span class="p">.</span><span class="n">listener_callback</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">listener_callback</span><span class="p">,</span>
             <span class="mi">10</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">listener_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Recieved '</span><span class="o">+</span><span class="n">msg</span><span class="p">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Recieved '</span><span class="o">+</span><span class="n">msg</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
     <span class="n">magazine_subscriber</span> <span class="o">=</span> <span class="n">MagazineSubscriber</span><span class="p">()</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">spin</span><span class="p">(</span><span class="n">magazine_subscriber</span><span class="p">)</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">magazine_subscriber</span><span class="p">)</span>
 
 <span class="n">main</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">subscriber</code> only recieves the message and prints it out so its relatively simple.</p>
+<p>The <code class="highlighter-rouge">subscriber</code> only recieves the message and prints it out so its relatively simple.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">rclpy</span>
 <span class="kn">from</span> <span class="nn">rclpy.node</span> <span class="kn">import</span> <span class="n">Node</span>
@@ -307,38 +307,38 @@ Recieved issue number 6
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MagazineSubscriber</span><span class="p">(</span><span class="n">Node</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span><span class="s">'magazine_subscriber'</span><span class="p">)</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">String</span><span class="p">,</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="s">'magazine_subscriber'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscription</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span><span class="n">String</span><span class="p">,</span>
             <span class="s">'fashion'</span><span class="p">,</span>
-            <span class="bp">self</span><span class="p">.</span><span class="n">listener_callback</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">listener_callback</span><span class="p">,</span>
             <span class="mi">10</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Making a <code class="language-plaintext highlighter-rouge">subscriber</code> class and instantiating its parent with the name <code class="language-plaintext highlighter-rouge">magazine_subscriber</code> . We then create a subription to the <code class="language-plaintext highlighter-rouge">fashion</code> topic to recieve <code class="language-plaintext highlighter-rouge">String</code> data, with a buffer time of 10 (<em>doesn’t matter as long as the callback function does not take too long to execute</em>). And whenever a message is recieved <code class="language-plaintext highlighter-rouge">listener_callback</code> function is called.</p>
+<p>Making a <code class="highlighter-rouge">subscriber</code> class and instantiating its parent with the name <code class="highlighter-rouge">magazine_subscriber</code> . We then create a subription to the <code class="highlighter-rouge">fashion</code> topic to recieve <code class="highlighter-rouge">String</code> data, with a buffer time of 10 (<em>doesn’t matter as long as the callback function does not take too long to execute</em>). And whenever a message is recieved <code class="highlighter-rouge">listener_callback</code> function is called.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">def</span> <span class="nf">listener_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Recieved '</span><span class="o">+</span><span class="n">msg</span><span class="p">.</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Recieved '</span><span class="o">+</span><span class="n">msg</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>In the <code class="language-plaintext highlighter-rouge">listener_callback</code> function we simply print the recieved message. meh</p>
+<p>In the <code class="highlighter-rouge">listener_callback</code> function we simply print the recieved message. meh</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
     <span class="n">magazine_subscriber</span> <span class="o">=</span> <span class="n">MagazineSubscriber</span><span class="p">()</span>
-    <span class="n">rclpy</span><span class="p">.</span><span class="n">spin</span><span class="p">(</span><span class="n">magazine_subscriber</span><span class="p">)</span>
+    <span class="n">rclpy</span><span class="o">.</span><span class="n">spin</span><span class="p">(</span><span class="n">magazine_subscriber</span><span class="p">)</span>
 
 <span class="n">main</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>Familiar routine to run once and then <code class="language-plaintext highlighter-rouge">spin</code> the <code class="language-plaintext highlighter-rouge">subscriber</code> forever.</p>
+<p>Familiar routine to run once and then <code class="highlighter-rouge">spin</code> the <code class="highlighter-rouge">subscriber</code> forever.</p>
 
 <p><strong>NOW CAN THIS BE USED TO CONTROL AN RC CAR?</strong>  <sup> yep </sup></p>
 
 <h2 id="packages">PACKAGES</h2>
 
-<p>The actual beauty of ROS lies in its package system. Upto this point we were using <code class="language-plaintext highlighter-rouge">python3.8</code> to run our scripts but basically any ROS software can be converted into sort of an executable package which can then be directly run without even mentioning the language.</p>
+<p>The actual beauty of ROS lies in its package system. Upto this point we were using <code class="highlighter-rouge">python3.8</code> to run our scripts but basically any ROS software can be converted into sort of an executable package which can then be directly run without even mentioning the language.</p>
 
-<p>Ideally you would start writing your code inside an empty project and once done just run <code class="language-plaintext highlighter-rouge">colcon build</code> in the project root and <code class="language-plaintext highlighter-rouge">source project_root/install/setup.zsh</code></p>
+<p>Ideally you would start writing your code inside an empty project and once done just run <code class="highlighter-rouge">colcon build</code> in the project root and <code class="highlighter-rouge">source project_root/install/setup.zsh</code></p>
 
 <p>Lets try converting our magazine pubsub to a package,</p>
 
@@ -346,14 +346,14 @@ Recieved issue number 6
 
 <h4 id="step-1">STEP-1:</h4>
 
-<p><code class="language-plaintext highlighter-rouge">cd</code> into <code class="language-plaintext highlighter-rouge">catkin_ws/src</code></p>
+<p><code class="highlighter-rouge">cd</code> into <code class="highlighter-rouge">catkin_ws/src</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Kaushik ros2-osx % <span class="nb">cd </span>catkin_ws/src
 Kaushik src % <span class="nb">pwd</span>
 /Users/Kaushik/ros2_foxy/ros2-osx/catkin_ws/src
 </code></pre></div></div>
 
-<p>Create an empty package using the command <code class="language-plaintext highlighter-rouge">ros2 pkg create --build-type ament_python magazine</code> . You should now see a new magazine directory. This is called the <strong>project root</strong>.</p>
+<p>Create an empty package using the command <code class="highlighter-rouge">ros2 pkg create --build-type ament_python magazine</code> . You should now see a new magazine directory. This is called the <strong>project root</strong>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Kaushik src % ros2 pkg create <span class="nt">--build-type</span> ament_python magazine
 going to create a new package
@@ -383,7 +383,7 @@ Kaushik src % <span class="nb">ls
 </span>examples        magazine
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">magazine</code> has a structure like,</p>
+<p><code class="highlighter-rouge">magazine</code> has a structure like,</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Kaushik src % tree magazine
 magazine
@@ -405,7 +405,7 @@ magazine
 
 <h4 id="step-2">STEP-2:</h4>
 
-<p>Awesome now lets move our publisher and subscriber scripts into <code class="language-plaintext highlighter-rouge">magazine/magazine</code>. All of your nodes need to be in this <package_name>/<package_name> script. ezpz</package_name></package_name></p>
+<p>Awesome now lets move our publisher and subscriber scripts into <code class="highlighter-rouge">magazine/magazine</code>. All of your nodes need to be in this <package_name>/<package_name> script. ezpz</package_name></package_name></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Kaushik magazine % <span class="nb">cd </span>magazine
 Kaushik magazine % <span class="nb">cp</span> ../../../../../tutorial/first_pubsub/<span class="k">*</span> <span class="nb">.</span>
@@ -415,7 +415,7 @@ Kaushik magazine % <span class="nb">ls
 
 <h4 id="step-3">STEP-3:</h4>
 
-<p>Now we must register the two scripts to be built into executables in the <code class="language-plaintext highlighter-rouge">setup.py</code> of the project’s root.</p>
+<p>Now we must register the two scripts to be built into executables in the <code class="highlighter-rouge">setup.py</code> of the project’s root.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
           <span class="s">'console_scripts'</span><span class="p">:</span> <span class="p">[</span>
@@ -429,7 +429,7 @@ Kaushik magazine % <span class="nb">ls
 
 <h4 id="step-4">STEP-4:</h4>
 
-<p>We must tell the ament build system that we have <code class="language-plaintext highlighter-rouge">rclpy</code> and <code class="language-plaintext highlighter-rouge">std_msgs</code> as dependencies that also need to be built into executables.</p>
+<p>We must tell the ament build system that we have <code class="highlighter-rouge">rclpy</code> and <code class="highlighter-rouge">std_msgs</code> as dependencies that also need to be built into executables.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">export</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">build_type</span><span class="o">&gt;</span><span class="n">ament_python</span><span class="o">&lt;/</span><span class="n">build_type</span><span class="o">&gt;</span>
@@ -440,7 +440,7 @@ Kaushik magazine % <span class="nb">ls
 
 <h4 id="step-5">STEP-5:</h4>
 
-<p>Awesome! Lets build it up! Simply navigate back to project root and run <code class="language-plaintext highlighter-rouge">colcon build</code></p>
+<p>Awesome! Lets build it up! Simply navigate back to project root and run <code class="highlighter-rouge">colcon build</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Kaushik magazine % <span class="nb">pwd</span>
 /Users/Kaushik/ros2_foxy/ros2-osx/catkin_ws/src/magazine
@@ -451,7 +451,7 @@ Finished <span class="o">&lt;&lt;&lt;</span> magazine <span class="o">[</span>2.
 Summary: 1 package finished <span class="o">[</span>3.21s]
 </code></pre></div></div>
 
-<p>Yay! We built the package! You should now see a new install folder in project root. Now simply <code class="language-plaintext highlighter-rouge">source install/setup.zsh</code> to add our new executable to <code class="language-plaintext highlighter-rouge">PATH</code>. Now we can run it using <code class="language-plaintext highlighter-rouge">ros2 run &lt;package_name&gt; &lt;node_name&gt;</code></p>
+<p>Yay! We built the package! You should now see a new install folder in project root. Now simply <code class="highlighter-rouge">source install/setup.zsh</code> to add our new executable to <code class="highlighter-rouge">PATH</code>. Now we can run it using <code class="highlighter-rouge">ros2 run &lt;package_name&gt; &lt;node_name&gt;</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Kaushik magazine % <span class="nb">source install</span>/setup.zsh
 <span class="o">[</span>connext_cmake_module] Warning: The location at which Connext was found when the workspace was built <span class="o">[[</span>/Applications/rti_connext_dds-5.3.1]] does not point to a valid directory, and the NDDSHOME environment variable has not been set. Support <span class="k">for </span>Connext will not be available.
@@ -493,15 +493,15 @@ Sending: issue number 4
             <!-- Share links section -->
             <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=ROS for Dummies&amp;url=kaushik.me/programming/2021/06/01/ros-for-dummies.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=ROS for Dummies&amp;url=savvy.kaushik.me/programming/2021/06/01/ros-for-dummies.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=kaushik.me/programming/2021/06/01/ros-for-dummies.html"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=savvy.kaushik.me/programming/2021/06/01/ros-for-dummies.html"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=kaushik.me/programming/2021/06/01/ros-for-dummies.html"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=savvy.kaushik.me/programming/2021/06/01/ros-for-dummies.html"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>

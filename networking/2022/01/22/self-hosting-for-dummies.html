@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Savvy - For everything technical and interesting</title>
+    <meta name="description" content="another blog" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css " />
+
+</head>
+<body class="home-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Self-Hosting for Dummies</h1>
+            <section class="post-meta">
+                
+                    on Networking
+                
+                <time class="post-date" datetime="2022-01-22">22 Jan 2022</time>
+            </section>
+        </header>
+        <br>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="">
+                
+                    <span class="blog-title">Savvy</span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2022-01-22">22 Jan 2022</time>
+            
+                on Networking
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Self-Hosting for Dummies</h1> -->
+
+        <section class="post-content">
+            <p>Recently, my student credits on Azure ran out.</p>
+
+<p>So everything I had running there - which was an ubuntu box, many serverless functions, two static web apps (with static ips) and a small k8s cluster - now had to be transferred to a pay-as-you-go model. Smashing the numbers into an online monthly cost calculator spit out a number that I would rather not pay. That and 13 year old me’s dream of owning a Raspberry Pi sparked the idea of hosting my own web infrastructure. And why the hell not.</p>
+
+<p>Great, we now have a Pi, what next?</p>
+
+<h1 id="step---1---set-up-the-pi">STEP - 1 - Set up the Pi</h1>
+
+<p>Headless setup of the Pi is extremely simple.</p>
+
+<ul>
+  <li>Simply grab <a href="https://github.com/raspberrypi/rpi-imager/releases/">Advanced Pi Imager</a> as suggested by the official site and open it up.</li>
+  <li>Slide your SD card in.</li>
+  <li>Select the default Raspbian OS and location as SD.</li>
+  <li>Now, hit ‘Ctrl-Shift-X’ to bring up advanced options.</li>
+  <li>Put in your Wifi credentials and enable <em>ssh</em> as henceforth we will talk to the pi wirelessly.</li>
+  <li>Set locale to your location to configure time. Although you can also do this later from within the Pi.</li>
+  <li>Hit run.</li>
+</ul>
+
+<p>Now plug the SD into your Pi connect it to your power supply. Give it 10-30 seconds to boot, then from your PC/laptop terminal, hit</p>
+
+<p><code class="highlighter-rouge">ssh pi@raspberrypi.local</code></p>
+
+<p>If that fails, do,</p>
+
+<p><code class="highlighter-rouge">nslookup raspberrypi.local</code></p>
+
+<p>If the output of that looks like</p>
+
+<p><img src="/assets/images/image-20220122114634636.png" alt="image-20220122114634636" /></p>
+
+<p>Grab your address corresponding to my <code class="highlighter-rouge">192.168.29.31</code> and do <code class="highlighter-rouge">ssh pi@YOUR_ADDRESS</code></p>
+
+<p>The password is <code class="highlighter-rouge">raspberrypi</code>.</p>
+
+<p>Now, if you are logged into your pi via ssh,</p>
+
+<p>(Which should look like this)</p>
+
+<p><img src="/assets/images/image-20220122115229683.png" alt="image-20220122115229683" /></p>
+
+<p>you should change your password. For this, hit <code class="highlighter-rouge">passwd</code>. Type in your old (<em>raspberrypi</em>) and new passwords as prompted.</p>
+
+<h1 id="step---2---set-up-nginx-on-your-pi">STEP - 2 - Set up NGINX on your Pi</h1>
+
+<p>NGINX is our web server of choice, which will see the url requested by the client and serve the appropriate webpage. so something like http://musings.kaushik.me will take you to where I have placed the musings html in my Pi, while http://savvy.kaushik.me will take you to the code location of savvy.</p>
+
+<p>To install NGINX, simply use</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>nginx
+</code></pre></div></div>
+
+<p>If  that fails, follow https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages.</p>
+
+<p>Once installed you can use <code class="highlighter-rouge">sudo systemctl start nginx</code> and access http://raspberrypi.local to confirm that our NGINX is running.</p>
+
+<p><img src="/assets/images/image-20220122141300067.png" alt="image-20220122141300067" /></p>
+
+<p>Now you can begin to configure your NGINX.</p>
+
+<p>All your custom configuration must go into <code class="highlighter-rouge">/etc/nginx/conf.d/server.conf</code>. If that server.conf file does not exist then you may create it, and it will automatically be included (everything in conf.d is included by default) in the main config.</p>
+
+<p>Use the <a href="http://nginx.org/en/docs/beginners_guide.html">official guide</a> for more info into NGINX configuration.</p>
+
+<p>My config looks like this</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pi@raspberrypi:~ <span class="nv">$ </span><span class="nb">cat</span> /etc/nginx/conf.d/server.conf
+server <span class="o">{</span>
+    listen <span class="o">[</span>::]:80<span class="p">;</span>
+    server_name musings.<span class="k">*</span><span class="p">;</span>
+    root /home/pi/sites/musings<span class="p">;</span>
+
+    location / <span class="o">{</span>
+        index index.html<span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+server <span class="o">{</span>
+    listen <span class="o">[</span>::]:80<span class="p">;</span>
+    server_name savvy.<span class="k">*</span><span class="p">;</span>
+    root /home/pi/sites/savvy<span class="p">;</span>
+
+    location / <span class="o">{</span>
+        index index.html<span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>You may not be able to test virtual hosts for now since that url to not mapped to the raspberrypi.local IP, but we will be able to do that after the next step.</p>
+
+<h1 id="step---3---explore-options-for-exposing-your-pi-to-the-internet">STEP - 3 - Explore Options for exposing your Pi to the Internet</h1>
+
+<p>Now would be a good time for me to give an overview of the process that follows. The IP you used to connect to the Pi in step 1 is a private IP. This is only valid when someone wants to connect to it from your WFI network. To expose your Pi to the public internet and reliably access it, you need a static public IP address. This is the most tricky part of our mission, and done conventionally, costs a good amount of money. However, our journey was born out of a need to save money. So we will try to achieve the same without paying a cent.</p>
+
+<p>This can be done using <em>Port Forwarding</em> or <em>Port Tunneling</em>.</p>
+
+<p>So assuming we have a server exposed to the public internet i.e, with a public IP, we can use Port Forwarding to “<em>forward</em>” all the requests from a port P1 of the server to a port P2 on our Pi. Our local NGINX server will be listening on the port P2, which will respond to this request with our webpage or API response which will also be forwarded back to the client.</p>
+
+<p>Your options to do this is all follows:</p>
+
+<ul>
+  <li>Option 1 - <a href="https://github.com/inconshreveable/ngrok">NGROK</a>:</li>
+</ul>
+
+<p>Running ngrok on your Pi will spit out a public url that can be used to connect to it from anywhere. However for a static url, a recent update made it pay-to-use. However, this is an age old solution worth looking into.</p>
+
+<ul>
+  <li>Option 2 - <a href="https://github.com/milio48/serveo">Serveo</a></li>
+</ul>
+
+<p>Serveo is a newer alternative to ngrok, which does the same thing but for free. This can be used if the next option is not suitable for you.</p>
+
+<p>So when you use Serveo, the url spit out is of the form <em>something.serveo.net</em>, so in this option you are still relying on a third party to provide you access, which I wish to avoid. That is to say god forbid if serveo.net goes down, or they take down the free tier, you’re screwed. If this is not a valid concern in your case, this is a great choice.</p>
+
+<ul>
+  <li>Option 3 - <a href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;awsf.Free%20Tier%20Types=*all&amp;awsf.Free%20Tier%20Categories=*all">Using an AWS/Azure free tier VM</a></li>
+</ul>
+
+<p>Our last option, and my option of choice, is to use the free tier AWS or Azure VM - that is by default given a public url (however if shut down and started up again, this url changes) - to act as the port forwarder for our Pi. Both providers offer 750 hours of VM use per month for 12 months exceeding which you must pay an hourly rate (around 0.01 dollars).</p>
+
+<p>However after 12 months you can move to the lowest tier (t3a.nano) on AWS which costs close to 0.0047 dollars an hour, working out to 3.5 dollars a month, which is cheaper than ngrok with added benefits such as accessing your pi from anywhere (by tunnelling to port 22) and while ngrok only allows one online process, here you can have as many as you want with <em>NGINX</em> to handle the routing.</p>
+
+<p>This guide will henceforth follow option 3 with AWS.</p>
+
+<h1 id="step---4---spin-up-a-free-tier-ec2-and-set-up-port-forwarding">STEP - 4 - Spin Up a Free Tier EC2 and set up Port Forwarding</h1>
+
+<p>Sign up for AWS and use https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html to spin up a free tier vm.</p>
+
+<p>Once that is done, navigate to the ec2 tab of your aws console. Click on the instance’s row, then click on the security group id</p>
+
+<p><img src="/assets/images/image-20220122143358834.png" alt="image-20220122143358834" /></p>
+
+<p>We will now edit our Inbound rules to open two ports for our server. Click on edit inbound rule.</p>
+
+<p><img src="/assets/images/image-20220122143448305.png" alt="image-20220122143448305" /></p>
+
+<p>then add two rules opening port 8080 for custom TCP and port 80 for HTTP traffic. Your configuration should look like this.</p>
+
+<p><img src="/assets/images/image-20220122143530576.png" alt="image-20220122143530576" /></p>
+
+<p>Cool you can now ssh into your EC2 and install NGINX using <code class="highlighter-rouge">sudo yum install nginx</code>.</p>
+
+<p>Then you need to copy your EC2 ssh key from your local machine to your Pi using scp.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp /something/something/myrsakey.pem pi@raspberrypi.local:~
+</code></pre></div></div>
+
+<p>Now get your EC2’s url from here,</p>
+
+<p><img src="/assets/images/image-20220122144313166.png" alt="image-20220122144313166" /></p>
+
+<p>And in another terminal tab, ssh into your Pi, and run this command to enable port forwarding from EC2 port 8080 to Pi’s port 80.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 8080:localhost:80 <span class="nt">-v</span> <span class="nt">-i</span> /home/pi/myrsa.pem ec2-user@YOUR_EC2_URL
+</code></pre></div></div>
+
+<p>Henceforth the requests to <code class="highlighter-rouge">YOUR_EC2_URL:8080</code> will be forwarded to port 80 of your Pi.</p>
+
+<p>I have used port <code class="highlighter-rouge">8080</code> because port <code class="highlighter-rouge">80:localhost:80</code> was throwing an error. So you can make a small change to the default EC2 nginx config to redirect all requests that its <code class="highlighter-rouge">port 80</code> recieves to <code class="highlighter-rouge">8080</code>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>ec2-user@ip-172-31-38-69 ~]<span class="nv">$ </span><span class="nb">cat</span> /etc/nginx/conf.d/default.conf
+server <span class="o">{</span>
+    listen       80<span class="p">;</span>
+    server_name  _<span class="p">;</span>
+
+    <span class="c">#access_log  /var/log/nginx/host.access.log  main;</span>
+
+    location / <span class="o">{</span>
+        proxy_set_header   X-Forwarded-For <span class="nv">$remote_addr</span><span class="p">;</span>
+        proxy_set_header   Host <span class="nv">$http_host</span><span class="p">;</span>
+        proxy_pass         <span class="s2">"http://127.0.0.1:8080"</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    <span class="c">#error_page  404              /404.html;</span>
+
+    <span class="c"># redirect server error pages to the static page /50x.html</span>
+    <span class="c">#</span>
+    error_page   500 502 503 504  /50x.html<span class="p">;</span>
+    location <span class="o">=</span> /50x.html <span class="o">{</span>
+        root   /usr/share/nginx/html<span class="p">;</span>
+    <span class="o">}</span>
+
+    <span class="c"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span>
+    <span class="c">#</span>
+    <span class="c">#location ~ \.php$ {</span>
+    <span class="c">#    proxy_pass   http://127.0.0.1;</span>
+    <span class="c">#}</span>
+
+    <span class="c"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
+    <span class="c">#</span>
+    <span class="c">#location ~ \.php$ {</span>
+    <span class="c">#    root           html;</span>
+    <span class="c">#    fastcgi_pass   127.0.0.1:9000;</span>
+    <span class="c">#    fastcgi_index  index.php;</span>
+    <span class="c">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span>
+    <span class="c">#    include        fastcgi_params;</span>
+    <span class="c">#}</span>
+
+    <span class="c"># deny access to .htaccess files, if Apache's document root</span>
+    <span class="c"># concurs with nginx's one</span>
+    <span class="c">#</span>
+    <span class="c">#location ~ /\.ht {</span>
+    <span class="c">#    deny  all;</span>
+    <span class="c">#}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>the proxy prefixed lines are the changes to be made.</p>
+
+<h1 id="step---5---get-a-domain-name-and-configure-dns">STEP - 5 - Get a domain name and configure DNS</h1>
+
+<p>I personally signed up the <a href="https://education.github.com/pack">Github Student Developer</a> pack a few years ago and got <code class="highlighter-rouge">kaushik.me</code> for free, along with several other benefits. I highly recommend that.</p>
+
+<p>Regardless, a domain will let you set up virtual hosts and is easier to access than the long default ec2 url. So once you have the domain you can configure DNS.</p>
+
+<p>My DNS config looks like this</p>
+
+<p><img src="/assets/images/image-20220122145627986.png" alt="image-20220122145627986" /></p>
+
+<p>Simply CNAME all your vhosts to your EC2 url.</p>
+
+<p>And voila, http://musings.kaushik.me will now be a valid url redirecting to my blog. And at this point you can now test your Pi’s NGINX config with vhosts.</p>
+
+<p>NOTE: I have added the autossh command to my bashrc, so if the pi is ever rebooted, i simply need to ssh for the tunneling to be  reinitiated. And with nohup the tunnel will persist even after logout.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">!</span> pgrep <span class="nt">-x</span> <span class="s2">"autossh"</span> <span class="o">&gt;</span> /dev/null
+<span class="k">then
+        </span><span class="nb">nohup</span> /usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 8080:localhost:80 <span class="nt">-v</span> <span class="nt">-oStrictHostKeyChecking</span><span class="o">=</span>no <span class="nt">-i</span> something/something/myrsa.pem ec2-user@kaushik.me <span class="o">&gt;</span>/home/pi/logs/site.out 2&gt;/home/pi/logs/siteerr.out &amp;
+        <span class="nb">nohup</span> /usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 2222:localhost:22 <span class="nt">-v</span> <span class="nt">-oStrictHostKeyChecking</span><span class="o">=</span>no <span class="nt">-i</span> something/something/myrsa.pem ec2-user@kaushik.me <span class="o">&gt;</span>/home/pi/logs/ssh.out 2&gt;/home/pi/logs/ssherr.out &amp;
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>With this setup the ssh is also forwarded so now I can <code class="highlighter-rouge">ssh pi@kaushik.me -p 2222</code> to ssh into my pi from anywhere in the world. (Dont try this since I have changed the password.)</p>
+
+<p>That’s it! If you made it this far, Congratulations! you can now reap the benefits of your very own web infrastructure and make it do whatever you want, for free!</p>
+
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png)">
+                    <span class="hidden">Kaushik's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> Kaushik </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        Just like writing.
+                    </p>
+                </section>
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Self-Hosting for Dummies&amp;url=savvy.kaushik.me/networking/2022/01/22/self-hosting-for-dummies.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=savvy.kaushik.me/networking/2022/01/22/self-hosting-for-dummies.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=savvy.kaushik.me/networking/2022/01/22/self-hosting-for-dummies.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+</body>
+</html>
