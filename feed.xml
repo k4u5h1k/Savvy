@@ -5,15 +5,15 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Jan 2022 15:42:49 +0530</pubDate>
-    <lastBuildDate>Sat, 22 Jan 2022 15:42:49 +0530</lastBuildDate>
+    <pubDate>Sat, 22 Jan 2022 16:10:00 +0530</pubDate>
+    <lastBuildDate>Sat, 22 Jan 2022 16:10:00 +0530</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
         <title>Self-Hosting for Dummies</title>
         <description>&lt;p&gt;Recently, my student credits on Azure ran out.&lt;/p&gt;
 
-&lt;p&gt;So everything I had running there - which was an ubuntu box, many serverless functions, two static web apps (with static ips) and a small k8s cluster - now had to be transferred to a pay-as-you-go model. Smashing the numbers into an online monthly cost calculator spit out a number that I would rather not pay. That and 13 year old me’s dream of owning a Raspberry Pi sparked the idea of hosting my own web infrastructure. And why the hell not.&lt;/p&gt;
+&lt;p&gt;So everything I had running there - which was an ubuntu box, many serverless functions, two static web apps (with static ips) and a small k8s cluster - now had to be transferred to a pay-as-you-go model. Smashing the numbers into an online monthly cost calculator spit out an amount I would rather not pay. That and 13 year old me’s dream of owning a Raspberry Pi sparked the idea of hosting my own web infrastructure. And why the hell not.&lt;/p&gt;
 
 &lt;p&gt;Great, we now have a Pi, what next?&lt;/p&gt;
 
