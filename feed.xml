@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Jan 2022 16:40:48 +0530</pubDate>
-    <lastBuildDate>Sat, 22 Jan 2022 16:40:48 +0530</lastBuildDate>
+    <pubDate>Sun, 23 Jan 2022 14:26:34 +0530</pubDate>
+    <lastBuildDate>Sun, 23 Jan 2022 14:26:34 +0530</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
       <item>
@@ -19,7 +19,8 @@
 
 &lt;h1 id=&quot;step---1---set-up-the-pi&quot;&gt;STEP - 1 - Set up the Pi&lt;/h1&gt;
 
-&lt;p&gt;Headless setup of the Pi is extremely simple.&lt;/p&gt;
+&lt;p&gt;Headless setup of the Pi is extremely simple. 
+On your PC/Laptop,&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Simply grab &lt;a href=&quot;https://github.com/raspberrypi/rpi-imager/releases/&quot;&gt;Advanced Pi Imager&lt;/a&gt; as suggested by the official site and open it up.&lt;/li&gt;
