@@ -214,7 +214,7 @@ server <span class="o">{</span>
 
 <p>And in another terminal tab, ssh into your Pi, and run this command to enable port forwarding from EC2 port 8080 to Pi’s port 80.</p>
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 8080:localhost:80 <span class="nt">-v</span> <span class="nt">-i</span> /home/pi/myrsa.pem ec2-user@YOUR_EC2_URL
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 8080:localhost:80 <span class="nt">-v</span> <span class="nt">-i</span> /something/something/myrsa.pem ec2-user@YOUR_EC2_URL
 </code></pre></div></div>
 
 <p>Henceforth the requests to <code class="highlighter-rouge">YOUR_EC2_URL:8080</code> will be forwarded to port 80 of your Pi.</p>
