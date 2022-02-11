@@ -62,22 +62,22 @@
 
 <p>Git was created in 1995 by Linus Torvalds, the creator of Linux, when he was frustrated by existing version control systems. But what exactly is a <em>version control system</em>?</p>
 
-<p>Suppose you are working on a huge software project, and at some point, after making several changes you run the program and it just crashes. You had closed all your editors before so you can’t hit <code class="highlighter-rouge">Control-Z</code> and simply undo your changes. What do you do now?</p>
+<p>Suppose you are working on a huge software project, and at some point, after making several changes you run the program and it just crashes. You had closed all your editors before so you can’t hit <code class="language-plaintext highlighter-rouge">Control-Z</code> and simply undo your changes. What do you do now?</p>
 
-<p>The correct answer is: <em>run it again and again until it works</em>. To avoid a situation like this, you should use git. With git you can <code class="highlighter-rouge">commit</code> your changes which means you can create a checkpoint  , which can be <code class="highlighter-rouge">reset</code> to later, if the need arises. Lets see how this is done.</p>
+<p>The correct answer is: <em>run it again and again until it works</em>. To avoid a situation like this, you should use git. With git you can <code class="language-plaintext highlighter-rouge">commit</code> your changes which means you can create a checkpoint  , which can be <code class="language-plaintext highlighter-rouge">reset</code> to later, if the need arises. Lets see how this is done.</p>
 
-<p>Open up your git-bash or any shell that has git installed. Now <code class="highlighter-rouge">cd</code> into the directory where you want to initialize your git repository and hit <code class="highlighter-rouge">git init</code>. If you see something like <code class="highlighter-rouge">Initialized empty Git repository in path</code>, this was successful. Now this git repository will track any changes you tell it to <strong>within</strong> this directory.</p>
+<p>Open up your git-bash or any shell that has git installed. Now <code class="language-plaintext highlighter-rouge">cd</code> into the directory where you want to initialize your git repository and hit <code class="language-plaintext highlighter-rouge">git init</code>. If you see something like <code class="language-plaintext highlighter-rouge">Initialized empty Git repository in path</code>, this was successful. Now this git repository will track any changes you tell it to <strong>within</strong> this directory.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-14 at 12.37.46 PM.png" alt="Screenshot 2021-05-14 at 12.37.46 PM" /></p>
 
 <p>Now lets write a script that shows us the current time.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">m'</span><span class="p">))</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">now</span><span class="p">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%H:%m'</span><span class="p">))</span>
 </code></pre></div></div>
 
-<p>Great now lets make a commit by first adding it to the stage using <code class="highlighter-rouge">git add</code> and then commit your stage using <code class="highlighter-rouge">git commit</code>.</p>
+<p>Great now lets make a commit by first adding it to the stage using <code class="language-plaintext highlighter-rouge">git add</code> and then commit your stage using <code class="language-plaintext highlighter-rouge">git commit</code>.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-14 at 12.55.47 PM.png" alt="Screenshot 2021-05-14 at 12.55.47 PM" /></p>
 
@@ -87,31 +87,31 @@
 
 <p>AHHHHHHHHH I deliberately deleted my script using rm. The shell has nothing like Recycle Bin, OH NO What do I do now?!</p>
 
-<p>Your commits are identified by their <em>hashes</em>. To grab this previous commit’s hash hit <code class="highlighter-rouge">git log</code>.</p>
+<p>Your commits are identified by their <em>hashes</em>. To grab this previous commit’s hash hit <code class="language-plaintext highlighter-rouge">git log</code>.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-14 at 12.59.44 PM.png" alt="Screenshot 2021-05-14 at 12.59.44 PM" /></p>
 
-<p>So my commit’s hash is  <code class="highlighter-rouge">cfe234cd49925d39a9d5a3895a7e3298e741f116</code>. Yours will differ.</p>
+<p>So my commit’s hash is  <code class="language-plaintext highlighter-rouge">cfe234cd49925d39a9d5a3895a7e3298e741f116</code>. Yours will differ.</p>
 
 <p>Now you can reset to this commit using</p>
 
-<p><code class="highlighter-rouge">git reset --hard cfe234cd49925d39a9d5a3895a7e3298e741f116</code></p>
+<p><code class="language-plaintext highlighter-rouge">git reset --hard cfe234cd49925d39a9d5a3895a7e3298e741f116</code></p>
 
 <p>Awesome we have our show_time back.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-14 at 1.11.13 PM.png" alt="Screenshot 2021-05-14 at 1.11.13 PM" /></p>
 
-<p>Now what if you made a commit you didn’t mean to make? How would you delete this commit without hard resetting to it? Simple. You <code class="highlighter-rouge">soft</code> reset.</p>
+<p>Now what if you made a commit you didn’t mean to make? How would you delete this commit without hard resetting to it? Simple. You <code class="language-plaintext highlighter-rouge">soft</code> reset.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-14 at 1.15.06 PM.png" alt="Screenshot 2021-05-14 at 1.15.06 PM" /></p>
 
-<p>So now run <code class="highlighter-rouge">git log</code> to grab the hash of the commit you want to soft reset to.</p>
+<p>So now run <code class="language-plaintext highlighter-rouge">git log</code> to grab the hash of the commit you want to soft reset to.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-14 at 1.15.36 PM.png" alt="Screenshot 2021-05-14 at 1.15.36 PM" /></p>
 
-<p>So once more we want to soft reset to <code class="highlighter-rouge">added show_time</code> commit. So simply run</p>
+<p>So once more we want to soft reset to <code class="language-plaintext highlighter-rouge">added show_time</code> commit. So simply run</p>
 
-<p><code class="highlighter-rouge">git reset --soft cfe234cd49925d39a9d5a3895a7e3298e741f116</code></p>
+<p><code class="language-plaintext highlighter-rouge">git reset --soft cfe234cd49925d39a9d5a3895a7e3298e741f116</code></p>
 
 <p>Running git log again can verify that we have deleted that commit.</p>
 
@@ -123,11 +123,11 @@
 
 <p>First off, if you don’t have dark mode on, quickly click the button on google meet that looks like a red sideways telephone.</p>
 
-<p>Otherwise we can proceed to <code class="highlighter-rouge">cloning</code> someone’s repo! First copy the repo url.</p>
+<p>Otherwise we can proceed to <code class="language-plaintext highlighter-rouge">cloning</code> someone’s repo! First copy the repo url.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-15 at 12.21.54 PM.png" alt="Screenshot 2021-05-15 at 12.21.54 PM" /></p>
 
-<p>then hit <code class="highlighter-rouge">git clone https://github.com/k4u5h1k/Games.git</code> to clone the repo within the current directory.</p>
+<p>then hit <code class="language-plaintext highlighter-rouge">git clone https://github.com/k4u5h1k/Games.git</code> to clone the repo within the current directory.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-15 at 12.27.31 PM.png" alt="Screenshot 2021-05-15 at 12.27.31 PM" /></p>
 
@@ -155,7 +155,7 @@
 
 <p><img src="/assets/images/Screenshot 2021-05-15 at 12.43.19 PM.png" alt="Screenshot 2021-05-15 at 12.43.19 PM" /></p>
 
-<p>And push it to github using <code class="highlighter-rouge">git push</code>.</p>
+<p>And push it to github using <code class="language-plaintext highlighter-rouge">git push</code>.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-15 at 12.43.54 PM.png" alt="Screenshot 2021-05-15 at 12.43.54 PM" /></p>
 
@@ -192,7 +192,7 @@
 
 <p>Once you make your PR the maintainers will review it, or suggest changes if required. Finally they may merge your PR or close it without merging, if they found your addition inappropriate or inadequate.</p>
 
-<p>Now if someone makes a PR to your project and you accept their changes, how will you apply their changes to your local code? Will you clone the repo again? No. You use <code class="highlighter-rouge">git pull</code>.</p>
+<p>Now if someone makes a PR to your project and you accept their changes, how will you apply their changes to your local code? Will you clone the repo again? No. You use <code class="language-plaintext highlighter-rouge">git pull</code>.</p>
 
 <p>Lets make a change to our screen_time repo’s README and pull the change locally.</p>
 
@@ -200,7 +200,7 @@
 
 <p>Click on the pen icon here and make changes to the README.</p>
 
-<p>Then go to your screen_time directory and type <code class="highlighter-rouge">git pull</code> to get those changes in your local README.</p>
+<p>Then go to your screen_time directory and type <code class="language-plaintext highlighter-rouge">git pull</code> to get those changes in your local README.</p>
 
 <p><img src="/assets/images/Screenshot 2021-05-15 at 5.45.46 PM.png" alt="Screenshot 2021-05-15 at 5.45.46 PM" /></p>
 

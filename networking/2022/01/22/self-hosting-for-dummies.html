@@ -81,19 +81,19 @@ On your PC/Laptop,</p>
 
 <p>Now plug the SD into your Pi connect it to your power supply. Give it 10-30 seconds to boot, then from your PC/laptop terminal, hit</p>
 
-<p><code class="highlighter-rouge">ssh pi@raspberrypi.local</code></p>
+<p><code class="language-plaintext highlighter-rouge">ssh pi@raspberrypi.local</code></p>
 
 <p>If that fails, do,</p>
 
-<p><code class="highlighter-rouge">nslookup raspberrypi.local</code></p>
+<p><code class="language-plaintext highlighter-rouge">nslookup raspberrypi.local</code></p>
 
 <p>If the output of that looks like</p>
 
 <p><img src="/assets/images/image-20220122114634636.png" alt="image-20220122114634636" /></p>
 
-<p>Grab your address corresponding to my <code class="highlighter-rouge">192.168.29.31</code> and do <code class="highlighter-rouge">ssh pi@YOUR_ADDRESS</code></p>
+<p>Grab your address corresponding to my <code class="language-plaintext highlighter-rouge">192.168.29.31</code> and do <code class="language-plaintext highlighter-rouge">ssh pi@YOUR_ADDRESS</code></p>
 
-<p>The password is <code class="highlighter-rouge">raspberrypi</code>.</p>
+<p>The password is <code class="language-plaintext highlighter-rouge">raspberrypi</code>.</p>
 
 <p>Now, if you are logged into your pi via ssh,</p>
 
@@ -101,7 +101,7 @@ On your PC/Laptop,</p>
 
 <p><img src="/assets/images/image-20220122115229683.png" alt="image-20220122115229683" /></p>
 
-<p>you should change your password. For this, hit <code class="highlighter-rouge">passwd</code>. Type in your old (<em>raspberrypi</em>) and new passwords as prompted.</p>
+<p>you should change your password. For this, hit <code class="language-plaintext highlighter-rouge">passwd</code>. Type in your old (<em>raspberrypi</em>) and new passwords as prompted.</p>
 
 <h1 id="step---2---set-up-nginx-on-your-pi">STEP - 2 - Set up NGINX on your Pi</h1>
 
@@ -115,13 +115,13 @@ On your PC/Laptop,</p>
 
 <p>If  that fails, follow the <a href="https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages">official guide</a>.</p>
 
-<p>Once installed you can use <code class="highlighter-rouge">sudo systemctl start nginx</code> and access http://raspberrypi.local to confirm that our NGINX is running.</p>
+<p>Once installed you can use <code class="language-plaintext highlighter-rouge">sudo systemctl start nginx</code> and access http://raspberrypi.local to confirm that our NGINX is running.</p>
 
 <p><img src="/assets/images/image-20220122141300067.png" alt="image-20220122141300067" /></p>
 
 <p>Now you can begin to configure your NGINX.</p>
 
-<p>All your custom configuration must go into <code class="highlighter-rouge">/etc/nginx/conf.d/server.conf</code>. If that server.conf file does not exist then you may create it, and it will automatically be included (everything in conf.d is included by default) in the main config.</p>
+<p>All your custom configuration must go into <code class="language-plaintext highlighter-rouge">/etc/nginx/conf.d/server.conf</code>. If that server.conf file does not exist then you may create it, and it will automatically be included (everything in conf.d is included by default) in the main config.</p>
 
 <p>Use the <a href="http://nginx.org/en/docs/beginners_guide.html">official guide</a> for more info into NGINX configuration.</p>
 
@@ -201,7 +201,7 @@ server <span class="o">{</span>
 
 <p><img src="/assets/images/image-20220122143530576.png" alt="image-20220122143530576" /></p>
 
-<p>Cool you can now ssh into your EC2 and install NGINX using <code class="highlighter-rouge">sudo yum install nginx</code>.</p>
+<p>Cool you can now ssh into your EC2 and install NGINX using <code class="language-plaintext highlighter-rouge">sudo yum install nginx</code>.</p>
 
 <p>Then you need to copy your EC2 ssh key from your local machine to your Pi using scp.</p>
 
@@ -217,9 +217,9 @@ server <span class="o">{</span>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 8080:localhost:80 <span class="nt">-v</span> <span class="nt">-i</span> /something/something/myrsa.pem ec2-user@YOUR_EC2_URL
 </code></pre></div></div>
 
-<p>Henceforth the requests to <code class="highlighter-rouge">YOUR_EC2_URL:8080</code> will be forwarded to port 80 of your Pi.</p>
+<p>Henceforth the requests to <code class="language-plaintext highlighter-rouge">YOUR_EC2_URL:8080</code> will be forwarded to port 80 of your Pi.</p>
 
-<p>I have used port <code class="highlighter-rouge">8080</code> because port <code class="highlighter-rouge">80:localhost:80</code> was throwing an error. So you can make a small change to the default EC2 nginx config to redirect all requests that its <code class="highlighter-rouge">port 80</code> recieves to <code class="highlighter-rouge">8080</code>.</p>
+<p>I have used port <code class="language-plaintext highlighter-rouge">8080</code> because port <code class="language-plaintext highlighter-rouge">80:localhost:80</code> was throwing an error. So you can make a small change to the default EC2 nginx config to redirect all requests that its <code class="language-plaintext highlighter-rouge">port 80</code> recieves to <code class="language-plaintext highlighter-rouge">8080</code>.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>ec2-user@ip-172-31-38-69 ~]<span class="nv">$ </span><span class="nb">cat</span> /etc/nginx/conf.d/default.conf
 server <span class="o">{</span>
@@ -272,7 +272,7 @@ server <span class="o">{</span>
 
 <h1 id="step---5---get-a-domain-name-and-configure-dns">STEP - 5 - Get a domain name and configure DNS</h1>
 
-<p>I personally signed up the <a href="https://education.github.com/pack">Github Student Developer</a> pack a few years ago and got <code class="highlighter-rouge">kaushik.me</code> for free, along with several other benefits. I highly recommend that.</p>
+<p>I personally signed up the <a href="https://education.github.com/pack">Github Student Developer</a> pack a few years ago and got <code class="language-plaintext highlighter-rouge">kaushik.me</code> for free, along with several other benefits. I highly recommend that.</p>
 
 <p>Regardless, a domain will let you set up virtual hosts and is easier to access than the long default ec2 url. So once you have the domain you can configure DNS.</p>
 
@@ -288,12 +288,13 @@ server <span class="o">{</span>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">!</span> pgrep <span class="nt">-x</span> <span class="s2">"autossh"</span> <span class="o">&gt;</span> /dev/null
 <span class="k">then
-        </span><span class="nb">nohup</span> /usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 8080:localhost:80 <span class="nt">-v</span> <span class="nt">-oStrictHostKeyChecking</span><span class="o">=</span>no <span class="nt">-i</span> something/something/myrsa.pem ec2-user@kaushik.me <span class="o">&gt;</span>/home/pi/logs/site.out 2&gt;/home/pi/logs/siteerr.out &amp;
-        <span class="nb">nohup</span> /usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 2222:localhost:22 <span class="nt">-v</span> <span class="nt">-oStrictHostKeyChecking</span><span class="o">=</span>no <span class="nt">-i</span> something/something/myrsa.pem ec2-user@kaushik.me <span class="o">&gt;</span>/home/pi/logs/ssh.out 2&gt;/home/pi/logs/ssherr.out &amp;
+        </span><span class="nb">nohup</span> /usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 8080:localhost:80 <span class="nt">-v</span> <span class="nt">-o</span> <span class="s2">"StrictHostKeyChecking no"</span> <span class="nt">-o</span> <span class="s2">"ServerAliveInterval 30"</span> <span class="nt">-i</span> something/something/myrsa.pem ec2-user@kaushik.me <span class="o">&gt;</span>/home/pi/logs/site.out 2&gt;/home/pi/logs/siteerr.out &amp;
+        <span class="nb">nohup</span> /usr/lib/autossh/autossh <span class="nt">-M</span> 0 <span class="nt">-N</span>  <span class="nt">-R</span> 2222:localhost:22 <span class="nt">-v</span> <span class="nt">-o</span> <span class="s2">"StrictHostKeyChecking no"</span> <span class="nt">-i</span> something/something/myrsa.pem ec2-user@kaushik.me <span class="o">&gt;</span>/home/pi/logs/ssh.out 2&gt;/home/pi/logs/ssherr.out &amp;
+
 <span class="k">fi</span>
 </code></pre></div></div>
 
-<p>With this setup the ssh is also forwarded so now I can <code class="highlighter-rouge">ssh pi@kaushik.me -p 2222</code> to ssh into my pi from anywhere in the world. (Dont try this since I have changed the password.)</p>
+<p>With this setup the ssh is also forwarded so now I can <code class="language-plaintext highlighter-rouge">ssh pi@kaushik.me -p 2222</code> to ssh into my pi from anywhere in the world. (Dont try this since I have changed the password.)</p>
 
 <p>That’s it! If you made it this far, Congratulations! you can now reap the benefits of your very own web infrastructure and make it do whatever you want, for free!</p>
 

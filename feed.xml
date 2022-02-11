@@ -5,9 +5,9 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Jan 2022 21:19:15 +0530</pubDate>
-    <lastBuildDate>Sun, 23 Jan 2022 21:19:15 +0530</lastBuildDate>
-    <generator>Jekyll v3.8.6</generator>
+    <pubDate>Sat, 12 Feb 2022 00:12:40 +0530</pubDate>
+    <lastBuildDate>Sat, 12 Feb 2022 00:12:40 +0530</lastBuildDate>
+    <generator>Jekyll v4.2.1</generator>
     
       <item>
         <title>Self-Hosting for Dummies</title>
@@ -34,19 +34,19 @@ On your PC/Laptop,&lt;/p&gt;
 
 &lt;p&gt;Now plug the SD into your Pi connect it to your power supply. Give it 10-30 seconds to boot, then from your PC/laptop terminal, hit&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh pi@raspberrypi.local&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh pi@raspberrypi.local&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If that fails, do,&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;nslookup raspberrypi.local&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nslookup raspberrypi.local&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If the output of that looks like&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/image-20220122114634636.png&quot; alt=&quot;image-20220122114634636&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Grab your address corresponding to my &lt;code class=&quot;highlighter-rouge&quot;&gt;192.168.29.31&lt;/code&gt; and do &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh pi@YOUR_ADDRESS&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Grab your address corresponding to my &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.29.31&lt;/code&gt; and do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh pi@YOUR_ADDRESS&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;The password is &lt;code class=&quot;highlighter-rouge&quot;&gt;raspberrypi&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The password is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;raspberrypi&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Now, if you are logged into your pi via ssh,&lt;/p&gt;
 
@@ -54,7 +54,7 @@ On your PC/Laptop,&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/image-20220122115229683.png&quot; alt=&quot;image-20220122115229683&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;you should change your password. For this, hit &lt;code class=&quot;highlighter-rouge&quot;&gt;passwd&lt;/code&gt;. Type in your old (&lt;em&gt;raspberrypi&lt;/em&gt;) and new passwords as prompted.&lt;/p&gt;
+&lt;p&gt;you should change your password. For this, hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;passwd&lt;/code&gt;. Type in your old (&lt;em&gt;raspberrypi&lt;/em&gt;) and new passwords as prompted.&lt;/p&gt;
 
 &lt;h1 id=&quot;step---2---set-up-nginx-on-your-pi&quot;&gt;STEP - 2 - Set up NGINX on your Pi&lt;/h1&gt;
 
@@ -68,13 +68,13 @@ On your PC/Laptop,&lt;/p&gt;
 
 &lt;p&gt;If  that fails, follow the &lt;a href=&quot;https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages&quot;&gt;official guide&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Once installed you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo systemctl start nginx&lt;/code&gt; and access http://raspberrypi.local to confirm that our NGINX is running.&lt;/p&gt;
+&lt;p&gt;Once installed you can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo systemctl start nginx&lt;/code&gt; and access http://raspberrypi.local to confirm that our NGINX is running.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/image-20220122141300067.png&quot; alt=&quot;image-20220122141300067&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now you can begin to configure your NGINX.&lt;/p&gt;
 
-&lt;p&gt;All your custom configuration must go into &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/nginx/conf.d/server.conf&lt;/code&gt;. If that server.conf file does not exist then you may create it, and it will automatically be included (everything in conf.d is included by default) in the main config.&lt;/p&gt;
+&lt;p&gt;All your custom configuration must go into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/nginx/conf.d/server.conf&lt;/code&gt;. If that server.conf file does not exist then you may create it, and it will automatically be included (everything in conf.d is included by default) in the main config.&lt;/p&gt;
 
 &lt;p&gt;Use the &lt;a href=&quot;http://nginx.org/en/docs/beginners_guide.html&quot;&gt;official guide&lt;/a&gt; for more info into NGINX configuration.&lt;/p&gt;
 
@@ -154,7 +154,7 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/image-20220122143530576.png&quot; alt=&quot;image-20220122143530576&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Cool you can now ssh into your EC2 and install NGINX using &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo yum install nginx&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Cool you can now ssh into your EC2 and install NGINX using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo yum install nginx&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Then you need to copy your EC2 ssh key from your local machine to your Pi using scp.&lt;/p&gt;
 
@@ -170,9 +170,9 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/lib/autossh/autossh &lt;span class=&quot;nt&quot;&gt;-M&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 8080:localhost:80 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; /something/something/myrsa.pem ec2-user@YOUR_EC2_URL
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Henceforth the requests to &lt;code class=&quot;highlighter-rouge&quot;&gt;YOUR_EC2_URL:8080&lt;/code&gt; will be forwarded to port 80 of your Pi.&lt;/p&gt;
+&lt;p&gt;Henceforth the requests to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YOUR_EC2_URL:8080&lt;/code&gt; will be forwarded to port 80 of your Pi.&lt;/p&gt;
 
-&lt;p&gt;I have used port &lt;code class=&quot;highlighter-rouge&quot;&gt;8080&lt;/code&gt; because port &lt;code class=&quot;highlighter-rouge&quot;&gt;80:localhost:80&lt;/code&gt; was throwing an error. So you can make a small change to the default EC2 nginx config to redirect all requests that its &lt;code class=&quot;highlighter-rouge&quot;&gt;port 80&lt;/code&gt; recieves to &lt;code class=&quot;highlighter-rouge&quot;&gt;8080&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I have used port &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8080&lt;/code&gt; because port &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;80:localhost:80&lt;/code&gt; was throwing an error. So you can make a small change to the default EC2 nginx config to redirect all requests that its &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;port 80&lt;/code&gt; recieves to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8080&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;ec2-user@ip-172-31-38-69 ~]&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /etc/nginx/conf.d/default.conf
 server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -225,7 +225,7 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 &lt;h1 id=&quot;step---5---get-a-domain-name-and-configure-dns&quot;&gt;STEP - 5 - Get a domain name and configure DNS&lt;/h1&gt;
 
-&lt;p&gt;I personally signed up the &lt;a href=&quot;https://education.github.com/pack&quot;&gt;Github Student Developer&lt;/a&gt; pack a few years ago and got &lt;code class=&quot;highlighter-rouge&quot;&gt;kaushik.me&lt;/code&gt; for free, along with several other benefits. I highly recommend that.&lt;/p&gt;
+&lt;p&gt;I personally signed up the &lt;a href=&quot;https://education.github.com/pack&quot;&gt;Github Student Developer&lt;/a&gt; pack a few years ago and got &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;kaushik.me&lt;/code&gt; for free, along with several other benefits. I highly recommend that.&lt;/p&gt;
 
 &lt;p&gt;Regardless, a domain will let you set up virtual hosts and is easier to access than the long default ec2 url. So once you have the domain you can configure DNS.&lt;/p&gt;
 
@@ -241,12 +241,13 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; pgrep &lt;span class=&quot;nt&quot;&gt;-x&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;autossh&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /dev/null
 &lt;span class=&quot;k&quot;&gt;then
-        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nohup&lt;/span&gt; /usr/lib/autossh/autossh &lt;span class=&quot;nt&quot;&gt;-M&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 8080:localhost:80 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oStrictHostKeyChecking&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; something/something/myrsa.pem ec2-user@kaushik.me &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;/home/pi/logs/site.out 2&amp;gt;/home/pi/logs/siteerr.out &amp;amp;
-        &lt;span class=&quot;nb&quot;&gt;nohup&lt;/span&gt; /usr/lib/autossh/autossh &lt;span class=&quot;nt&quot;&gt;-M&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 2222:localhost:22 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oStrictHostKeyChecking&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;no &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; something/something/myrsa.pem ec2-user@kaushik.me &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;/home/pi/logs/ssh.out 2&amp;gt;/home/pi/logs/ssherr.out &amp;amp;
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nohup&lt;/span&gt; /usr/lib/autossh/autossh &lt;span class=&quot;nt&quot;&gt;-M&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 8080:localhost:80 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;StrictHostKeyChecking no&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ServerAliveInterval 30&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; something/something/myrsa.pem ec2-user@kaushik.me &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;/home/pi/logs/site.out 2&amp;gt;/home/pi/logs/siteerr.out &amp;amp;
+        &lt;span class=&quot;nb&quot;&gt;nohup&lt;/span&gt; /usr/lib/autossh/autossh &lt;span class=&quot;nt&quot;&gt;-M&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 2222:localhost:22 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;StrictHostKeyChecking no&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; something/something/myrsa.pem ec2-user@kaushik.me &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;/home/pi/logs/ssh.out 2&amp;gt;/home/pi/logs/ssherr.out &amp;amp;
+
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;With this setup the ssh is also forwarded so now I can &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh pi@kaushik.me -p 2222&lt;/code&gt; to ssh into my pi from anywhere in the world. (Dont try this since I have changed the password.)&lt;/p&gt;
+&lt;p&gt;With this setup the ssh is also forwarded so now I can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh pi@kaushik.me -p 2222&lt;/code&gt; to ssh into my pi from anywhere in the world. (Dont try this since I have changed the password.)&lt;/p&gt;
 
 &lt;p&gt;That’s it! If you made it this far, Congratulations! you can now reap the benefits of your very own web infrastructure and make it do whatever you want, for free!&lt;/p&gt;
 
@@ -280,12 +281,12 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
       &lt;li&gt;
         &lt;p&gt;Generate text data using,&lt;/p&gt;
 
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./maryam.py -e google -q 'Marvel' -l 10 --api --format &amp;gt; test.json&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./maryam.py -e google -q 'Marvel' -l 10 --api --format &amp;gt; test.json&lt;/code&gt;&lt;/p&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Pass it to cluster module with,&lt;/p&gt;
 
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./maryam.py -e cluster --json test.json&lt;/code&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./maryam.py -e cluster --json test.json&lt;/code&gt;&lt;/p&gt;
 
         &lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/08/17/yB48znAlJbm1dqg.png&quot; alt=&quot;Screenshot 2021-08-17 at 12.49.58 PM&quot; /&gt;&lt;/p&gt;
 
@@ -445,51 +446,51 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     
       <item>
         <title>Tmux Shortcuts</title>
-        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tmux&lt;/code&gt; is a session manager for your terminal.&lt;/p&gt;
+        <description>&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tmux&lt;/code&gt; is a session manager for your terminal.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/EKWjP6H.jpg&quot; alt=&quot;terminal&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ctrl-b&lt;/code&gt;     ← prefix&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ctrl-b&lt;/code&gt;     ← prefix&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix %&lt;/code&gt; ← split with vertical line&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix %&lt;/code&gt; ← split with vertical line&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix &quot;&lt;/code&gt; ← split with horizontal line&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix &quot;&lt;/code&gt; ← split with horizontal line&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix x&lt;/code&gt; ← kill pane&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix x&lt;/code&gt; ← kill pane&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix c&lt;/code&gt; ← new window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix c&lt;/code&gt; ← new window&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix p&lt;/code&gt; ← move to previous window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix p&lt;/code&gt; ← move to previous window&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix n&lt;/code&gt; ← move to next window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix n&lt;/code&gt; ← move to next window&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix d&lt;/code&gt; ← detach&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix d&lt;/code&gt; ← detach&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix z&lt;/code&gt; ← toggle pane full screen&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix z&lt;/code&gt; ← toggle pane full screen&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix q&lt;/code&gt; ← show pane numbers; type number to go to pane&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix q&lt;/code&gt; ← show pane numbers; type number to go to pane&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix ,&lt;/code&gt; ← rename window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix ,&lt;/code&gt; ← rename window&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix $&lt;/code&gt; ← rename session&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix $&lt;/code&gt; ← rename session&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix s&lt;/code&gt; ← list session&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix s&lt;/code&gt; ← list session&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix ' #&lt;/code&gt; ← jump to # window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix ' #&lt;/code&gt; ← jump to # window&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix !&lt;/code&gt; ← send pane to new window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix !&lt;/code&gt; ← send pane to new window&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix &amp;amp;&lt;/code&gt; ← kill window&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix &amp;amp;&lt;/code&gt; ← kill window&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix t&lt;/code&gt; ← big clock&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix t&lt;/code&gt; ← big clock&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix o&lt;/code&gt; ← swap panes&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix o&lt;/code&gt; ← swap panes&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix {&lt;/code&gt; ← move current pane left&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix {&lt;/code&gt; ← move current pane left&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;prefix }&lt;/code&gt; ← move current pane right&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix }&lt;/code&gt; ← move current pane right&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:setw synchronize-panes on&lt;/code&gt; ← sync panes&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:setw synchronize-panes on&lt;/code&gt; ← sync panes&lt;/p&gt;
 </description>
         <pubDate>Wed, 02 Jun 2021 00:00:00 +0530</pubDate>
         <link>/terminal/2021/06/02/tmux-notes.html</link>
@@ -502,7 +503,7 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     
       <item>
         <title>On Ctrl-C Ctrl-V</title>
-        <description>&lt;p&gt;Javascript is extremely powerful, to say the least. One of its often overlooked features is the &lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt; event listener.&lt;/p&gt;
+        <description>&lt;p&gt;Javascript is extremely powerful, to say the least. One of its often overlooked features is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;copy&lt;/code&gt; event listener.&lt;/p&gt;
 
 &lt;p&gt;What damage can that do? Here, copy this ‘innocent’ command (&lt;em&gt;meant to be pasted into a shell&lt;/em&gt;) and paste it somewhere.&lt;/p&gt;
 
@@ -516,7 +517,7 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 });
 &lt;/script&gt;
 
-&lt;p&gt;The text you just copied even has an &lt;code class=&quot;highlighter-rouge&quot;&gt;Enter&lt;/code&gt; character, so the command will execute automatically if pasted in a shell, and &lt;strong&gt;I will have control over this system before you can even comprehend what happened&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The text you just copied even has an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Enter&lt;/code&gt; character, so the command will execute automatically if pasted in a shell, and &lt;strong&gt;I will have control over this system before you can even comprehend what happened&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;This is how the code works,&lt;/p&gt;
 
@@ -628,9 +629,9 @@ just sits pretty &lt;span class=&quot;k&quot;&gt;until &lt;/span&gt;i hit Contro
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;rclpy.node&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;first_node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'my_first_node'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -641,19 +642,19 @@ just sits pretty &lt;span class=&quot;k&quot;&gt;until &lt;/span&gt;i hit Contro
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;rclpy.node&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Self explanatory, first we import the &lt;code class=&quot;highlighter-rouge&quot;&gt;rclpy&lt;/code&gt; library and the &lt;code class=&quot;highlighter-rouge&quot;&gt;Node&lt;/code&gt; class,&lt;/p&gt;
+&lt;p&gt;Self explanatory, first we import the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rclpy&lt;/code&gt; library and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node&lt;/code&gt; class,&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;first_node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'my_first_node'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;We initiate the library and then instantiate our &lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;We initiate the library and then instantiate our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;node&lt;/code&gt;,&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first_node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If we just instantiate our node and dont put this line the program execution will stop there. If we want to keep our node running until we kill it with &lt;code class=&quot;highlighter-rouge&quot;&gt;Control-C&lt;/code&gt; or otherwise, this must be used.&lt;/p&gt;
+&lt;p&gt;If we just instantiate our node and dont put this line the program execution will stop there. If we want to keep our node running until we kill it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Control-C&lt;/code&gt; or otherwise, this must be used.&lt;/p&gt;
 
 &lt;p&gt;Congratulations you just learnt to write a node! Lets move on to something more advanced.&lt;/p&gt;
 
@@ -682,70 +683,70 @@ Sending: issue number 6
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MagazinePublisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'magazine_publisher'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playboy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'magazine_publisher'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playboy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
                 &lt;span class=&quot;s&quot;&gt;'fashion'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
                 &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timer_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'issue number '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playboy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;publish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sending: {msg.data}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'issue number '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playboy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;publish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sending: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;magazine_publisher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MagazinePublisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;magazine_publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;magazine_publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Commencing surgery,&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;rclpyfrom&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Node&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;rclpyfrom&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Node&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;std_msgs.msg&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Apart from our usual imports there is a new one. In this project we are not only creating a node but also sending stuff which needs to be in a &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; class (not to be confused with the string data type). The actual message goes in &lt;code class=&quot;highlighter-rouge&quot;&gt;String.data&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;Apart from our usual imports there is a new one. In this project we are not only creating a node but also sending stuff which needs to be in a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt; class (not to be confused with the string data type). The actual message goes in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String.data&lt;/code&gt;,&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MagazinePublisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;    
   &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;        
-    &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'magazine_publisher'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playboy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                 
+    &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'magazine_publisher'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playboy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                 
                                          &lt;span class=&quot;s&quot;&gt;'fashion'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;                
                                          &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here we declare our publisher class that declares itself as a Node by the name &lt;code class=&quot;highlighter-rouge&quot;&gt;magazine_publisher&lt;/code&gt;, and publishing on the topic &lt;code class=&quot;highlighter-rouge&quot;&gt;fashion&lt;/code&gt;  &lt;del&gt;Didn’t know what else to call playboy sorry&lt;/del&gt; with a buffer size of &lt;code class=&quot;highlighter-rouge&quot;&gt;10&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Here we declare our publisher class that declares itself as a Node by the name &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magazine_publisher&lt;/code&gt;, and publishing on the topic &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fashion&lt;/code&gt;  &lt;del&gt;Didn’t know what else to call playboy sorry&lt;/del&gt; with a buffer size of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;10&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-                &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+                &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timer_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now we create a &lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt; that calls our sender function every 1 second.&lt;/p&gt;
+&lt;p&gt;Now we create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;timer&lt;/code&gt; that calls our sender function every 1 second.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timer_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
       &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'issue number '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playboy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;publish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sending: {msg.data}'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'issue number '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;playboy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;publish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sending: &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This function gets called by the &lt;code class=&quot;highlighter-rouge&quot;&gt;timer&lt;/code&gt; every second. It uses the &lt;code class=&quot;highlighter-rouge&quot;&gt;playboy&lt;/code&gt; object to send magazine issues as messages.&lt;/p&gt;
+&lt;p&gt;This function gets called by the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;timer&lt;/code&gt; every second. It uses the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;playboy&lt;/code&gt; object to send magazine issues as messages.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;magazine_publisher&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MagazinePublisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;magazine_publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;magazine_publisher&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Like the first node we initiate &lt;code class=&quot;highlighter-rouge&quot;&gt;rclpy&lt;/code&gt; then instantiate &lt;code class=&quot;highlighter-rouge&quot;&gt;MagazinePublisher&lt;/code&gt; and spin it.&lt;/p&gt;
+&lt;p&gt;Like the first node we initiate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rclpy&lt;/code&gt; then instantiate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MagazinePublisher&lt;/code&gt; and spin it.&lt;/p&gt;
 
 &lt;h3 id=&quot;subscriber&quot;&gt;SUBSCRIBER&lt;/h3&gt;
 
@@ -768,24 +769,24 @@ Recieved issue number 6
 
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MagazineSubscriber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'magazine_subscriber'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subscription&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_subscription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'magazine_subscriber'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subscription&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_subscription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;s&quot;&gt;'fashion'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listener_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listener_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;listener_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Recieved '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Recieved '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;magazine_subscriber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MagazineSubscriber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;magazine_subscriber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;magazine_subscriber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;subscriber&lt;/code&gt; only recieves the message and prints it out so its relatively simple.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subscriber&lt;/code&gt; only recieves the message and prints it out so its relatively simple.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;rclpy&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;rclpy.node&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;
@@ -796,38 +797,38 @@ Recieved issue number 6
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MagazineSubscriber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'magazine_subscriber'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subscription&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_subscription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'magazine_subscriber'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;subscription&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create_subscription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;s&quot;&gt;'fashion'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listener_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listener_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
             &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Making a &lt;code class=&quot;highlighter-rouge&quot;&gt;subscriber&lt;/code&gt; class and instantiating its parent with the name &lt;code class=&quot;highlighter-rouge&quot;&gt;magazine_subscriber&lt;/code&gt; . We then create a subription to the &lt;code class=&quot;highlighter-rouge&quot;&gt;fashion&lt;/code&gt; topic to recieve &lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt; data, with a buffer time of 10 (&lt;em&gt;doesn’t matter as long as the callback function does not take too long to execute&lt;/em&gt;). And whenever a message is recieved &lt;code class=&quot;highlighter-rouge&quot;&gt;listener_callback&lt;/code&gt; function is called.&lt;/p&gt;
+&lt;p&gt;Making a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subscriber&lt;/code&gt; class and instantiating its parent with the name &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magazine_subscriber&lt;/code&gt; . We then create a subription to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fashion&lt;/code&gt; topic to recieve &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;String&lt;/code&gt; data, with a buffer time of 10 (&lt;em&gt;doesn’t matter as long as the callback function does not take too long to execute&lt;/em&gt;). And whenever a message is recieved &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;listener_callback&lt;/code&gt; function is called.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;listener_callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Recieved '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Recieved '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;In the &lt;code class=&quot;highlighter-rouge&quot;&gt;listener_callback&lt;/code&gt; function we simply print the recieved message. meh&lt;/p&gt;
+&lt;p&gt;In the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;listener_callback&lt;/code&gt; function we simply print the recieved message. meh&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;magazine_subscriber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MagazineSubscriber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;magazine_subscriber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rclpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;magazine_subscriber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Familiar routine to run once and then &lt;code class=&quot;highlighter-rouge&quot;&gt;spin&lt;/code&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;subscriber&lt;/code&gt; forever.&lt;/p&gt;
+&lt;p&gt;Familiar routine to run once and then &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;spin&lt;/code&gt; the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;subscriber&lt;/code&gt; forever.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;NOW CAN THIS BE USED TO CONTROL AN RC CAR?&lt;/strong&gt;  &lt;sup&gt; yep &lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;packages&quot;&gt;PACKAGES&lt;/h2&gt;
 
-&lt;p&gt;The actual beauty of ROS lies in its package system. Upto this point we were using &lt;code class=&quot;highlighter-rouge&quot;&gt;python3.8&lt;/code&gt; to run our scripts but basically any ROS software can be converted into sort of an executable package which can then be directly run without even mentioning the language.&lt;/p&gt;
+&lt;p&gt;The actual beauty of ROS lies in its package system. Upto this point we were using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python3.8&lt;/code&gt; to run our scripts but basically any ROS software can be converted into sort of an executable package which can then be directly run without even mentioning the language.&lt;/p&gt;
 
-&lt;p&gt;Ideally you would start writing your code inside an empty project and once done just run &lt;code class=&quot;highlighter-rouge&quot;&gt;colcon build&lt;/code&gt; in the project root and &lt;code class=&quot;highlighter-rouge&quot;&gt;source project_root/install/setup.zsh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ideally you would start writing your code inside an empty project and once done just run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;colcon build&lt;/code&gt; in the project root and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source project_root/install/setup.zsh&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Lets try converting our magazine pubsub to a package,&lt;/p&gt;
 
@@ -835,14 +836,14 @@ Recieved issue number 6
 
 &lt;h4 id=&quot;step-1&quot;&gt;STEP-1:&lt;/h4&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; into &lt;code class=&quot;highlighter-rouge&quot;&gt;catkin_ws/src&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;catkin_ws/src&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Kaushik ros2-osx % &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;catkin_ws/src
 Kaushik src % &lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
 /Users/Kaushik/ros2_foxy/ros2-osx/catkin_ws/src
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Create an empty package using the command &lt;code class=&quot;highlighter-rouge&quot;&gt;ros2 pkg create --build-type ament_python magazine&lt;/code&gt; . You should now see a new magazine directory. This is called the &lt;strong&gt;project root&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Create an empty package using the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ros2 pkg create --build-type ament_python magazine&lt;/code&gt; . You should now see a new magazine directory. This is called the &lt;strong&gt;project root&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Kaushik src % ros2 pkg create &lt;span class=&quot;nt&quot;&gt;--build-type&lt;/span&gt; ament_python magazine
 going to create a new package
@@ -872,7 +873,7 @@ Kaushik src % &lt;span class=&quot;nb&quot;&gt;ls
 &lt;/span&gt;examples        magazine
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;magazine&lt;/code&gt; has a structure like,&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magazine&lt;/code&gt; has a structure like,&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Kaushik src % tree magazine
 magazine
@@ -894,7 +895,7 @@ magazine
 
 &lt;h4 id=&quot;step-2&quot;&gt;STEP-2:&lt;/h4&gt;
 
-&lt;p&gt;Awesome now lets move our publisher and subscriber scripts into &lt;code class=&quot;highlighter-rouge&quot;&gt;magazine/magazine&lt;/code&gt;. All of your nodes need to be in this &lt;package_name&gt;/&lt;package_name&gt; script. ezpz&lt;/package_name&gt;&lt;/package_name&gt;&lt;/p&gt;
+&lt;p&gt;Awesome now lets move our publisher and subscriber scripts into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;magazine/magazine&lt;/code&gt;. All of your nodes need to be in this &lt;package_name&gt;/&lt;package_name&gt; script. ezpz&lt;/package_name&gt;&lt;/package_name&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Kaushik magazine % &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;magazine
 Kaushik magazine % &lt;span class=&quot;nb&quot;&gt;cp&lt;/span&gt; ../../../../../tutorial/first_pubsub/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
@@ -904,7 +905,7 @@ Kaushik magazine % &lt;span class=&quot;nb&quot;&gt;ls
 
 &lt;h4 id=&quot;step-3&quot;&gt;STEP-3:&lt;/h4&gt;
 
-&lt;p&gt;Now we must register the two scripts to be built into executables in the &lt;code class=&quot;highlighter-rouge&quot;&gt;setup.py&lt;/code&gt; of the project’s root.&lt;/p&gt;
+&lt;p&gt;Now we must register the two scripts to be built into executables in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setup.py&lt;/code&gt; of the project’s root.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;entry_points&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
           &lt;span class=&quot;s&quot;&gt;'console_scripts'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
@@ -918,7 +919,7 @@ Kaushik magazine % &lt;span class=&quot;nb&quot;&gt;ls
 
 &lt;h4 id=&quot;step-4&quot;&gt;STEP-4:&lt;/h4&gt;
 
-&lt;p&gt;We must tell the ament build system that we have &lt;code class=&quot;highlighter-rouge&quot;&gt;rclpy&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;std_msgs&lt;/code&gt; as dependencies that also need to be built into executables.&lt;/p&gt;
+&lt;p&gt;We must tell the ament build system that we have &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rclpy&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;std_msgs&lt;/code&gt; as dependencies that also need to be built into executables.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build_type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ament_python&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;build_type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -929,7 +930,7 @@ Kaushik magazine % &lt;span class=&quot;nb&quot;&gt;ls
 
 &lt;h4 id=&quot;step-5&quot;&gt;STEP-5:&lt;/h4&gt;
 
-&lt;p&gt;Awesome! Lets build it up! Simply navigate back to project root and run &lt;code class=&quot;highlighter-rouge&quot;&gt;colcon build&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Awesome! Lets build it up! Simply navigate back to project root and run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;colcon build&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Kaushik magazine % &lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
 /Users/Kaushik/ros2_foxy/ros2-osx/catkin_ws/src/magazine
@@ -940,7 +941,7 @@ Finished &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/span&gt; m
 Summary: 1 package finished &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;3.21s]
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Yay! We built the package! You should now see a new install folder in project root. Now simply &lt;code class=&quot;highlighter-rouge&quot;&gt;source install/setup.zsh&lt;/code&gt; to add our new executable to &lt;code class=&quot;highlighter-rouge&quot;&gt;PATH&lt;/code&gt;. Now we can run it using &lt;code class=&quot;highlighter-rouge&quot;&gt;ros2 run &amp;lt;package_name&amp;gt; &amp;lt;node_name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Yay! We built the package! You should now see a new install folder in project root. Now simply &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;source install/setup.zsh&lt;/code&gt; to add our new executable to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PATH&lt;/code&gt;. Now we can run it using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ros2 run &amp;lt;package_name&amp;gt; &amp;lt;node_name&amp;gt;&lt;/code&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Kaushik magazine % &lt;span class=&quot;nb&quot;&gt;source install&lt;/span&gt;/setup.zsh
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;connext_cmake_module] Warning: The location at which Connext was found when the workspace was built &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt;/Applications/rti_connext_dds-5.3.1]] does not point to a valid directory, and the NDDSHOME environment variable has not been set. Support &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;Connext will not be available.
@@ -973,22 +974,22 @@ Sending: issue number 4
 
 &lt;p&gt;Git was created in 1995 by Linus Torvalds, the creator of Linux, when he was frustrated by existing version control systems. But what exactly is a &lt;em&gt;version control system&lt;/em&gt;?&lt;/p&gt;
 
-&lt;p&gt;Suppose you are working on a huge software project, and at some point, after making several changes you run the program and it just crashes. You had closed all your editors before so you can’t hit &lt;code class=&quot;highlighter-rouge&quot;&gt;Control-Z&lt;/code&gt; and simply undo your changes. What do you do now?&lt;/p&gt;
+&lt;p&gt;Suppose you are working on a huge software project, and at some point, after making several changes you run the program and it just crashes. You had closed all your editors before so you can’t hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Control-Z&lt;/code&gt; and simply undo your changes. What do you do now?&lt;/p&gt;
 
-&lt;p&gt;The correct answer is: &lt;em&gt;run it again and again until it works&lt;/em&gt;. To avoid a situation like this, you should use git. With git you can &lt;code class=&quot;highlighter-rouge&quot;&gt;commit&lt;/code&gt; your changes which means you can create a checkpoint  , which can be &lt;code class=&quot;highlighter-rouge&quot;&gt;reset&lt;/code&gt; to later, if the need arises. Lets see how this is done.&lt;/p&gt;
+&lt;p&gt;The correct answer is: &lt;em&gt;run it again and again until it works&lt;/em&gt;. To avoid a situation like this, you should use git. With git you can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;commit&lt;/code&gt; your changes which means you can create a checkpoint  , which can be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reset&lt;/code&gt; to later, if the need arises. Lets see how this is done.&lt;/p&gt;
 
-&lt;p&gt;Open up your git-bash or any shell that has git installed. Now &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; into the directory where you want to initialize your git repository and hit &lt;code class=&quot;highlighter-rouge&quot;&gt;git init&lt;/code&gt;. If you see something like &lt;code class=&quot;highlighter-rouge&quot;&gt;Initialized empty Git repository in path&lt;/code&gt;, this was successful. Now this git repository will track any changes you tell it to &lt;strong&gt;within&lt;/strong&gt; this directory.&lt;/p&gt;
+&lt;p&gt;Open up your git-bash or any shell that has git installed. Now &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; into the directory where you want to initialize your git repository and hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git init&lt;/code&gt;. If you see something like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Initialized empty Git repository in path&lt;/code&gt;, this was successful. Now this git repository will track any changes you tell it to &lt;strong&gt;within&lt;/strong&gt; this directory.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-14 at 12.37.46 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 12.37.46 PM&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now lets write a script that shows us the current time.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;datetime&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;H:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;m'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'%H:%m'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Great now lets make a commit by first adding it to the stage using &lt;code class=&quot;highlighter-rouge&quot;&gt;git add&lt;/code&gt; and then commit your stage using &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Great now lets make a commit by first adding it to the stage using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git add&lt;/code&gt; and then commit your stage using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-14 at 12.55.47 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 12.55.47 PM&quot; /&gt;&lt;/p&gt;
 
@@ -998,31 +999,31 @@ Sending: issue number 4
 
 &lt;p&gt;AHHHHHHHHH I deliberately deleted my script using rm. The shell has nothing like Recycle Bin, OH NO What do I do now?!&lt;/p&gt;
 
-&lt;p&gt;Your commits are identified by their &lt;em&gt;hashes&lt;/em&gt;. To grab this previous commit’s hash hit &lt;code class=&quot;highlighter-rouge&quot;&gt;git log&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Your commits are identified by their &lt;em&gt;hashes&lt;/em&gt;. To grab this previous commit’s hash hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-14 at 12.59.44 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 12.59.44 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;So my commit’s hash is  &lt;code class=&quot;highlighter-rouge&quot;&gt;cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;. Yours will differ.&lt;/p&gt;
+&lt;p&gt;So my commit’s hash is  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;. Yours will differ.&lt;/p&gt;
 
 &lt;p&gt;Now you can reset to this commit using&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git reset --hard cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --hard cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Awesome we have our show_time back.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-14 at 1.11.13 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 1.11.13 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Now what if you made a commit you didn’t mean to make? How would you delete this commit without hard resetting to it? Simple. You &lt;code class=&quot;highlighter-rouge&quot;&gt;soft&lt;/code&gt; reset.&lt;/p&gt;
+&lt;p&gt;Now what if you made a commit you didn’t mean to make? How would you delete this commit without hard resetting to it? Simple. You &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;soft&lt;/code&gt; reset.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-14 at 1.15.06 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 1.15.06 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;So now run &lt;code class=&quot;highlighter-rouge&quot;&gt;git log&lt;/code&gt; to grab the hash of the commit you want to soft reset to.&lt;/p&gt;
+&lt;p&gt;So now run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git log&lt;/code&gt; to grab the hash of the commit you want to soft reset to.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-14 at 1.15.36 PM.png&quot; alt=&quot;Screenshot 2021-05-14 at 1.15.36 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;So once more we want to soft reset to &lt;code class=&quot;highlighter-rouge&quot;&gt;added show_time&lt;/code&gt; commit. So simply run&lt;/p&gt;
+&lt;p&gt;So once more we want to soft reset to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;added show_time&lt;/code&gt; commit. So simply run&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git reset --soft cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git reset --soft cfe234cd49925d39a9d5a3895a7e3298e741f116&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Running git log again can verify that we have deleted that commit.&lt;/p&gt;
 
@@ -1034,11 +1035,11 @@ Sending: issue number 4
 
 &lt;p&gt;First off, if you don’t have dark mode on, quickly click the button on google meet that looks like a red sideways telephone.&lt;/p&gt;
 
-&lt;p&gt;Otherwise we can proceed to &lt;code class=&quot;highlighter-rouge&quot;&gt;cloning&lt;/code&gt; someone’s repo! First copy the repo url.&lt;/p&gt;
+&lt;p&gt;Otherwise we can proceed to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cloning&lt;/code&gt; someone’s repo! First copy the repo url.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-15 at 12.21.54 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.21.54 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;then hit &lt;code class=&quot;highlighter-rouge&quot;&gt;git clone https://github.com/k4u5h1k/Games.git&lt;/code&gt; to clone the repo within the current directory.&lt;/p&gt;
+&lt;p&gt;then hit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git clone https://github.com/k4u5h1k/Games.git&lt;/code&gt; to clone the repo within the current directory.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-15 at 12.27.31 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.27.31 PM&quot; /&gt;&lt;/p&gt;
 
@@ -1066,7 +1067,7 @@ Sending: issue number 4
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-15 at 12.43.19 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.43.19 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;And push it to github using &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And push it to github using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-15 at 12.43.54 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 12.43.54 PM&quot; /&gt;&lt;/p&gt;
 
@@ -1103,7 +1104,7 @@ Sending: issue number 4
 
 &lt;p&gt;Once you make your PR the maintainers will review it, or suggest changes if required. Finally they may merge your PR or close it without merging, if they found your addition inappropriate or inadequate.&lt;/p&gt;
 
-&lt;p&gt;Now if someone makes a PR to your project and you accept their changes, how will you apply their changes to your local code? Will you clone the repo again? No. You use &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now if someone makes a PR to your project and you accept their changes, how will you apply their changes to your local code? Will you clone the repo again? No. You use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Lets make a change to our screen_time repo’s README and pull the change locally.&lt;/p&gt;
 
@@ -1111,7 +1112,7 @@ Sending: issue number 4
 
 &lt;p&gt;Click on the pen icon here and make changes to the README.&lt;/p&gt;
 
-&lt;p&gt;Then go to your screen_time directory and type &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull&lt;/code&gt; to get those changes in your local README.&lt;/p&gt;
+&lt;p&gt;Then go to your screen_time directory and type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git pull&lt;/code&gt; to get those changes in your local README.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2021-05-15 at 5.45.46 PM.png&quot; alt=&quot;Screenshot 2021-05-15 at 5.45.46 PM&quot; /&gt;&lt;/p&gt;
 
@@ -1202,7 +1203,7 @@ Sending: issue number 4
 
 &lt;p&gt;Now you might ask, if data types dont exist how can I convert an integer to a decimal?&lt;/p&gt;
 
-&lt;p&gt;You would simply use &lt;code class=&quot;highlighter-rouge&quot;&gt;data_type_you_want(variable_name)&lt;/code&gt; syntax. This is called &lt;strong&gt;typecasting&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You would simply use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data_type_you_want(variable_name)&lt;/code&gt; syntax. This is called &lt;strong&gt;typecasting&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 2.00.20 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 2.00.20 PM&quot; /&gt;&lt;/p&gt;
 
@@ -1220,25 +1221,25 @@ Sending: issue number 4
 
 &lt;h2 id=&quot;lists&quot;&gt;LISTS&lt;/h2&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Lists&lt;/code&gt; are very similar to arrays. They can contain any type of variable, and they can contain as many variables as you wish. &lt;code class=&quot;highlighter-rouge&quot;&gt;Lists&lt;/code&gt; can also be iterated over in a very simple manner. Here is an example of how to build a list.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lists&lt;/code&gt; are very similar to arrays. They can contain any type of variable, and they can contain as many variables as you wish. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lists&lt;/code&gt; can also be iterated over in a very simple manner. Here is an example of how to build a list.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 3.00.12 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.00.12 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;List elements can be &lt;strong&gt;accessed using indexes&lt;/strong&gt; with square &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; brackets . Lists are &lt;strong&gt;indexed from 0&lt;/strong&gt; .&lt;/p&gt;
+&lt;p&gt;List elements can be &lt;strong&gt;accessed using indexes&lt;/strong&gt; with square &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[]&lt;/code&gt; brackets . Lists are &lt;strong&gt;indexed from 0&lt;/strong&gt; .&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 3.03.17 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.03.17 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;To add an element to the end of a list use the &lt;code class=&quot;highlighter-rouge&quot;&gt;append&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;To add an element to the end of a list use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;append&lt;/code&gt; function.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 3.14.02 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.14.02 PM&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To remove an element from a list,&lt;/p&gt;
 
-&lt;p&gt;to remove by value use &lt;code class=&quot;highlighter-rouge&quot;&gt;remove&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;to remove by value use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;remove&lt;/code&gt;,&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 3.16.20 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.16.20 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;to remove by index use &lt;code class=&quot;highlighter-rouge&quot;&gt;del&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;to remove by index use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;del&lt;/code&gt;,&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 3.17.42 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 3.17.42 PM&quot; /&gt;&lt;/p&gt;
 
@@ -1253,7 +1254,7 @@ Sending: issue number 4
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;block_head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;st&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;
     &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Loops can run any number of commands as many times until a specified condition is valid.&lt;/p&gt;
@@ -1276,7 +1277,7 @@ Sending: issue number 4
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 9.25.55 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 9.25.55 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;We can also add more conditions using &lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt; operators between them. Open up your editor, lets write some conditions.&lt;/p&gt;
+&lt;p&gt;We can also add more conditions using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;and&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;or&lt;/code&gt; operators between them. Open up your editor, lets write some conditions.&lt;/p&gt;
 
 &lt;h2 id=&quot;functions&quot;&gt;FUNCTIONS&lt;/h2&gt;
 
@@ -1295,7 +1296,7 @@ Sending: issue number 4
 &lt;p&gt;Functions may also receive arguments (variables passed from the caller to the function). For example:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_function_with_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greeting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, {username} , From My Function!, I wish you {greeting}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sa&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; , From My Function!, I wish you &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;greeting&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Functions may return a value to the caller, using the keyword- ‘return’ . For example:&lt;/p&gt;
@@ -1304,14 +1305,14 @@ Sending: issue number 4
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;To call a function that has been defined, simply use &lt;code class=&quot;highlighter-rouge&quot;&gt;function_name(arguments)&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;To call a function that has been defined, simply use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;function_name(arguments)&lt;/code&gt;,&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_function_with_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AUVSI&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Happy Holidays&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;imports&quot;&gt;IMPORTS&lt;/h2&gt;
 
-&lt;p&gt;Functions that are written in the same folder in different script or are installed through pip, can be imported directly into your program using &lt;code class=&quot;highlighter-rouge&quot;&gt;from module_name import function_name&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Functions that are written in the same folder in different script or are installed through pip, can be imported directly into your program using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;from module_name import function_name&lt;/code&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
@@ -1327,7 +1328,7 @@ Sending: issue number 4
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 9.21.05 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 9.21.05 PM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Now, remove the colon at the start of the block and add an &lt;code class=&quot;highlighter-rouge&quot;&gt;end&lt;/code&gt; at the end of &lt;strong&gt;each block&lt;/strong&gt; and save this new script with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.rb&lt;/code&gt; extension. Now let me run this with the &lt;code class=&quot;highlighter-rouge&quot;&gt;ruby&lt;/code&gt; interpreter.&lt;/p&gt;
+&lt;p&gt;Now, remove the colon at the start of the block and add an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;end&lt;/code&gt; at the end of &lt;strong&gt;each block&lt;/strong&gt; and save this new script with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.rb&lt;/code&gt; extension. Now let me run this with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby&lt;/code&gt; interpreter.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/Screenshot 2020-11-18 at 9.24.18 PM.png&quot; alt=&quot;Screenshot 2020-11-18 at 9.24.18 PM&quot; /&gt;&lt;/p&gt;
 
