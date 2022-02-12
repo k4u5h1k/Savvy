@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Feb 2022 00:12:40 +0530</pubDate>
-    <lastBuildDate>Sat, 12 Feb 2022 00:12:40 +0530</lastBuildDate>
+    <pubDate>Sat, 12 Feb 2022 17:20:17 +0530</pubDate>
+    <lastBuildDate>Sat, 12 Feb 2022 17:20:17 +0530</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -477,6 +477,8 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix s&lt;/code&gt; ← list session&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix ' #&lt;/code&gt; ← jump to # window&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix f&lt;/code&gt; ← jump to window by name&lt;/p&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefix !&lt;/code&gt; ← send pane to new window&lt;/p&gt;
 
