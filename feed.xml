@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Feb 2022 17:20:17 +0530</pubDate>
-    <lastBuildDate>Sat, 12 Feb 2022 17:20:17 +0530</lastBuildDate>
+    <pubDate>Wed, 02 Mar 2022 14:37:27 +0530</pubDate>
+    <lastBuildDate>Wed, 02 Mar 2022 14:37:27 +0530</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -235,7 +235,7 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 &lt;p&gt;Simply CNAME all your vhosts to your EC2 url.&lt;/p&gt;
 
-&lt;p&gt;And voila, http://musings.kaushik.me will now be a valid url redirecting to my blog. And at this point you can now test your Pi’s NGINX config with vhosts.&lt;/p&gt;
+&lt;p&gt;And voila, &lt;a href=&quot;http://musings.kaushik.me&quot;&gt;http://musings.kaushik.me&lt;/a&gt; will now be a valid url redirecting to my blog. And at this point you can now test your Pi’s NGINX config with vhosts.&lt;/p&gt;
 
 &lt;p&gt;NOTE: I have added the autossh command to my bashrc, so if the pi is ever rebooted, i simply need to ssh for the tunneling to be  reinitiated. And with nohup the tunnel will persist even after logout.&lt;/p&gt;
 
