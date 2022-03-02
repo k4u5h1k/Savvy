@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Mar 2022 14:39:34 +0530</pubDate>
-    <lastBuildDate>Wed, 02 Mar 2022 14:39:34 +0530</lastBuildDate>
+    <pubDate>Wed, 02 Mar 2022 14:47:39 +0530</pubDate>
+    <lastBuildDate>Wed, 02 Mar 2022 14:47:39 +0530</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -140,7 +140,7 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 &lt;h1 id=&quot;step---4---spin-up-a-free-tier-ec2-and-set-up-port-forwarding&quot;&gt;STEP - 4 - Spin Up a Free Tier EC2 and set up Port Forwarding&lt;/h1&gt;
 
-&lt;p&gt;Sign up for AWS and use https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html to spin up a free tier vm.&lt;/p&gt;
+&lt;p&gt;Sign up for AWS and use &lt;a href=&quot;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html&quot;&gt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html&lt;/a&gt; to spin up a free tier vm.&lt;/p&gt;
 
 &lt;p&gt;Once that is done, navigate to the ec2 tab of your aws console. Click on the instance’s row, then click on the security group id&lt;/p&gt;
 
