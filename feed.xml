@@ -5,8 +5,8 @@
     <description>For everything technical and interesting</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Mar 2022 14:37:42 +0530</pubDate>
-    <lastBuildDate>Wed, 02 Mar 2022 14:37:42 +0530</lastBuildDate>
+    <pubDate>Wed, 02 Mar 2022 14:39:34 +0530</pubDate>
+    <lastBuildDate>Wed, 02 Mar 2022 14:39:34 +0530</lastBuildDate>
     <generator>Jekyll v4.2.1</generator>
     
       <item>
@@ -167,7 +167,7 @@ server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
 
 &lt;p&gt;And in another terminal tab, ssh into your Pi, and run this command to enable port forwarding from EC2 port 8080 to Pi’s port 80.&lt;/p&gt;
 
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/lib/autossh/autossh &lt;span class=&quot;nt&quot;&gt;-M&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 8080:localhost:80 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; /something/something/myrsa.pem ec2-user@YOUR_EC2_URL
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/lib/autossh/autossh &lt;span class=&quot;nt&quot;&gt;-M&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; 8080:localhost:80 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;StrictHostKeyChecking no&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ServerAliveInterval 30&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; /something/something/myrsa.pem ec2-user@YOUR_EC2_URL
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Henceforth the requests to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YOUR_EC2_URL:8080&lt;/code&gt; will be forwarded to port 80 of your Pi.&lt;/p&gt;
